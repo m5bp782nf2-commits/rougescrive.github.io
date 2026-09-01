@@ -2,111 +2,65 @@
 <html lang="it">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Rouge scrive — racconti e articoli.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Rouge scrive — Giovanni, Treviso, 21 anni.">
   <title>Rouge scrive</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* RESET BIANCO E DISTANZIAMENTI DEFINITIVI */
-    html, body, main, .home-grid, section, header, footer {
-      background-color: #ffffff !important;
-      background: #ffffff !important;
-      color: #111111 !important;
-    }
-    
-    /* Spaziatura generale della griglia principale */
-    .home-grid {
-      padding-top: 3rem !important;
-      padding-bottom: 3rem !important;
-      gap: 3rem !important;
-    }
-
-    /* Mantiene il titolo originale e posiziona la bio piccola */
-    .home-title {
-      margin-bottom: 2.5rem !important;
-    }
-
-    .home-title h1 {
-      margin-bottom: 0.8rem !important;
-    }
-
-    .intro-bio {
-      font-size: 0.95rem !important;
-      color: #666666 !important;
-      font-weight: 400 !important;
-      margin-top: 1rem !important;
-      line-height: 1.4 !important;
-    }
-
-    /* Spaziature pulite per l'elenco dei testi */
-    .home-index {
-      margin-top: 1.5rem !important;
-    }
-
-    .index-head {
-      margin-bottom: 1.5rem !important;
-    }
-
-    .post-row {
-      padding: 1.2rem 0 !important;
-      border-bottom: 1px solid #eeeeee !important;
-    }
-  </style>
 </head>
 <body>
 
   <header class="site-header">
-    <a class="brand" href="index.html">Rouge scrive</a>
+    <a class="brand" href="index.html">Rouge<span class="blood">scrive</span></a>
     <nav class="nav">
-      <a class="active" href="index.html">Home</a>
-      <a href="racconti.html">Racconti</a>
-      <a href="articoli.html">Articoli</a>
+      <a class="active" href="#racconti">Racconti</a>
+      <a href="#articoli">Articoli</a>
     </nav>
   </header>
 
-  <main class="home-grid">
-    <section class="home-title">
-      <div class="micro"><span class="blood-mark"></span></div>
-      <div>
-        <h1>Rouge<br><span class="blood">scrive</span></h1>
-        <p class="intro-bio">Giovanni, Treviso, 21 anni</p>
+  <main class="container">
+    
+    <section class="hero">
+      <h1 class="main-title">Rouge<br><span class="blood">scrive</span></h1>
+      <p class="bio">Giovanni, Treviso, 21 anni</p>
+    </section>
+
+    <!-- SEZIONE RACCONTI -->
+    <section id="racconti" class="section-block">
+      <h2 class="section-label">Racconti</h2>
+      <div class="posts-list">
+        
+        <a class="post-row" href="racconti/la-notte-di-giada.html">
+          <span class="num">01</span>
+          <span class="title">La notte di Giada</span>
+        </a>
+
+        <a class="post-row" href="racconti/american-joe.html">
+          <span class="num">02</span>
+          <span class="title">American Joe</span>
+        </a>
+
+        <a class="post-row" href="racconti/le-figurine.html">
+          <span class="num">03</span>
+          <span class="title">Le figurine</span>
+        </a>
+
       </div>
     </section>
 
-    <section class="home-index">
-      <div class="index-head">
-        <h2>Ultimi testi</h2>
+    <!-- SEZIONE ARTICOLI -->
+    <section id="articoli" class="section-block">
+      <h2 class="section-label">Articoli</h2>
+      <div class="posts-list">
+        
+        <div class="empty-state">In arrivo</div>
+
       </div>
-      
-      <a class="post-row" href="racconti/la-notte-di-giada.html">
-        <span class="num">01</span>
-        <div>
-          <h3>La notte di Giada</h3>
-          <span class="kind">Racconto</span>
-        </div>
-      </a>
-
-      <a class="post-row" href="racconti/american-joe.html">
-        <span class="num">02</span>
-        <div>
-          <h3>American Joe</h3>
-          <span class="kind">Racconto</span>
-        </div>
-      </a>
-
-      <a class="post-row" href="racconti/le-figurine.html">
-        <span class="num">03</span>
-        <div>
-          <h3>Le figurine</h3>
-          <span class="kind">Racconto</span>
-        </div>
-      </a>
     </section>
+
   </main>
 
-  <footer class="footer">
-    <span>Rouge scrive</span>
-    <span>Testi &amp; articoli</span>
+  <footer class="site-footer">
+    <span class="blood-dot">•</span>
   </footer>
 
 </body>
