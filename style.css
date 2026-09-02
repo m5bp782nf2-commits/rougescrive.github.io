@@ -1,40 +1,523 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;600;700&display=swap');
+
 
 :root {
-    --white: #f7f7f5;
-    --black: #171717;
-    --gray: #777;
-    --light-gray: #c8c8c5;
-    --red: #a00000;
+    --white: #ffffff;
+    --gray-1: #f0f0f0;
+    --gray-2: #d2d2d2;
+    --gray-3: #858585;
+    --gray-4: #414141;
+    --red: #b40000;
+    --red-dark: #8f0000;
+    --black: #111111;
 }
+
 
 * {
     box-sizing: border-box;
 }
 
+
 html {
     scroll-behavior: smooth;
 }
+
 
 body {
     margin: 0;
     background: var(--white);
     color: var(--black);
+
     font-family: Inter, Arial, sans-serif;
 }
 
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header {
-    height: 76px;
-    padding: 0 4vw;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    height: 72px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
+    padding: 0 4vw;
+
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-2);
+}
+
+
+.site-name {
+    color: var(--black);
+
+    text-decoration: none;
+
+    font-family: "DM Mono", monospace;
+    font-size: 16px;
+    font-weight: 500;
+
+    letter-spacing: .12em;
+    text-transform: lowercase;
+}
+
+
+.site-name span {
+    color: var(--red);
+}
+
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+
+nav a {
+    color: var(--black);
+
+    text-decoration: none;
+
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: .12em;
+}
+
+
+nav a:hover {
+    color: var(--red);
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    min-height: 66vh;
+
+    padding: 9vw 7vw 7vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--gray-2);
+}
+
+
+.wordmark {
+    font-size: clamp(70px, 14vw, 190px);
+
+    font-weight: 700;
+    line-height: .78;
+
+    letter-spacing: -.075em;
+
+    max-width: 1100px;
+}
+
+
+.wordmark span {
+    color: var(--red);
+}
+
+
+.bio {
+    margin-top: 16vh;
+
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+
+    gap: 35px;
+
+    color: var(--gray-3);
+
+    font-family: "DM Mono", monospace;
+    font-size: 12px;
+
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+
+.bio div:first-child {
+    color: var(--black);
+}
+
+
+/* =========================
+   CATEGORIES
+========================= */
+
+.category {
+    border-bottom: 1px solid var(--gray-2);
+}
+
+
+.category-title {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 90px 1fr 50px;
+    align-items: center;
+
+    padding: 34px 7vw;
+
+    background: var(--white);
+
+    border: 0;
+
+    color: var(--black);
+
+    cursor: pointer;
+
+    text-align: left;
+}
+
+
+.category-title span {
+    color: var(--gray-3);
+
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+}
+
+
+.category-title strong {
+    font-family: "DM Mono", monospace;
+    font-size: clamp(24px, 4vw, 55px);
+
+    font-weight: 500;
+
+    letter-spacing: -.04em;
+}
+
+
+.category-title i {
+    color: var(--red);
+
+    font-family: "DM Mono", monospace;
+    font-size: 25px;
+
+    font-style: normal;
+
+    text-align: right;
+}
+
+
+.category-title:hover {
+    background: var(--gray-1);
+}
+
+
+.works {
+    display: none;
+
+    border-top: 1px solid var(--gray-2);
+}
+
+
+.works.open {
+    display: block;
+}
+
+
+.work-title {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 90px 1fr 50px;
+
+    align-items: center;
+
+    padding: 22px 7vw 22px 10vw;
+
+    border: 0;
+    border-bottom: 1px solid var(--gray-2);
+
+    background: var(--gray-1);
+
+    cursor: pointer;
+
+    text-align: left;
+
+    color: var(--black);
+}
+
+
+.work-title span {
+    color: var(--gray-3);
+
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+}
+
+
+.work-title strong {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(18px, 2vw, 27px);
+
+    font-weight: 400;
+
+    line-height: 1.2;
+}
+
+
+.work-title i {
+    color: var(--red);
+
+    font-style: normal;
+
+    font-size: 20px;
+
+    text-align: right;
+}
+
+
+.work-title:hover {
+    background: var(--white);
+    color: var(--red);
+}
+
+
+/* =========================
+   READER
+========================= */
+
+.reader {
+    display: none;
+
+    position: relative;
+
+    padding: 8vw 7vw 10vw;
+
+    background: var(--white);
+
     border-bottom: 2px solid var(--black);
+}
+
+
+.reader.open {
+    display: block;
+}
+
+
+.close-reader {
+    position: absolute;
+
+    top: 35px;
+    right: 7vw;
+
+    border: 0;
+
+    background: transparent;
+
+    color: var(--red);
+
+    cursor: pointer;
+
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+
+    letter-spacing: .1em;
+}
+
+
+.work-content {
+    display: none;
+
+    max-width: 850px;
+
+    margin: 0 auto;
+}
+
+
+.work-content.active {
+    display: block;
+}
+
+
+.content-label {
+    margin-bottom: 30px;
+
+    color: var(--red);
+
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+
+    letter-spacing: .12em;
+}
+
+
+.work-content h1 {
+    margin: 0 0 70px;
+
+    font-size: clamp(40px, 7vw, 90px);
+
+    font-weight: 600;
+
+    line-height: .94;
+
+    letter-spacing: -.065em;
+}
+
+
+.body-text {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 19px;
+
+    line-height: 1.58;
+
+    white-space: pre-line;
+}
+
+
+.body-text em {
+    font-style: italic;
+}
+
+
+.poem-content {
+    max-width: 750px;
+}
+
+
+.poem {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 23px;
+
+    line-height: 1.42;
+
+    white-space: pre-line;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 30px 7vw 45px;
+
+    color: var(--gray-3);
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: .1em;
+}
+
+
+footer span:first-child {
+    color: var(--red);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    header {
+        height: auto;
+
+        padding: 20px 6vw;
+
+        align-items: flex-start;
+    }
+
+
+    nav {
+        gap: 12px;
+
+        flex-direction: column;
+
+        align-items: flex-end;
+    }
+
+
+    .intro {
+        min-height: 65vh;
+
+        padding: 18vw 7vw 12vw;
+    }
+
+
+    .wordmark {
+        font-size: clamp(58px, 18vw, 110px);
+    }
+
+
+    .bio {
+        margin-top: 12vh;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+
+    .category-title {
+        grid-template-columns: 45px 1fr 30px;
+
+        padding: 27px 7vw;
+    }
+
+
+    .work-title {
+        grid-template-columns: 45px 1fr 30px;
+
+        padding: 20px 7vw 20px 12vw;
+    }
+
+
+    .reader {
+        padding: 90px 7vw 80px;
+    }
+
+
+    .work-content h1 {
+        margin-bottom: 45px;
+
+        font-size: clamp(38px, 12vw, 65px);
+    }
+
+
+    .body-text {
+        font-size: 17px;
+        line-height: 1.6;
+    }
+
+
+    .poem {
+        font-size: 19px;
+    }
+
+
+    footer {
+        padding-left: 7vw;
+        padding-right: 7vw;
+    }
+
+}    border-bottom: 2px solid var(--black);
 
     position: sticky;
     top: 0;
