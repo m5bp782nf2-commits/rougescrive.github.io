@@ -1,10 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>rouge scrive</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rouge scrive</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -19,9 +20,13 @@
     </nav>
 </header>
 
+
 <main>
 
+    <!-- INTRO -->
+
     <section class="intro">
+
         <div class="wordmark">
             <span>rouge</span> scrive
         </div>
@@ -31,9 +36,528 @@
             <div>Treviso</div>
             <div>21 anni</div>
         </div>
+
     </section>
 
 
+    <!-- ARTICOLI -->
+
+    <section class="category" id="articoli">
+
+        <button class="category-title"
+                onclick="toggleSection('articles-list')">
+
+            <span>01</span>
+
+            <strong>ARTICOLI</strong>
+
+            <i>+</i>
+
+        </button>
+
+        <div class="works" id="articles-list">
+
+            <button class="work-title"
+                    onclick="openWork('article-1')">
+
+                <span>01</span>
+
+                <strong>
+                    La gen-z non si annoia: diagnosi di una crisi generazionale
+                </strong>
+
+                <i>↗</i>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- RACCONTI -->
+
+    <section class="category" id="racconti">
+
+        <button class="category-title"
+                onclick="toggleSection('stories-list')">
+
+            <span>02</span>
+
+            <strong>RACCONTI</strong>
+
+            <i>+</i>
+
+        </button>
+
+        <div class="works" id="stories-list">
+
+            <button class="work-title"
+                    onclick="openWork('story-1')">
+
+                <span>01</span>
+
+                <strong>American Joe</strong>
+
+                <i>↗</i>
+
+            </button>
+
+            <button class="work-title"
+                    onclick="openWork('story-2')">
+
+                <span>02</span>
+
+                <strong>Le figurine</strong>
+
+                <i>↗</i>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- POESIE -->
+
+    <section class="category" id="poesie">
+
+        <button class="category-title"
+                onclick="toggleSection('poems-list')">
+
+            <span>03</span>
+
+            <strong>POESIE</strong>
+
+            <i>+</i>
+
+        </button>
+
+        <div class="works" id="poems-list">
+
+            <button class="work-title"
+                    onclick="openWork('poem-1')">
+
+                <span>01</span>
+
+                <strong>Siamo due pescatori…</strong>
+
+                <i>↗</i>
+
+            </button>
+
+            <button class="work-title"
+                    onclick="openWork('poem-2')">
+
+                <span>02</span>
+
+                <strong>Un lampo selvaggio…</strong>
+
+                <i>↗</i>
+
+            </button>
+
+            <button class="work-title"
+                    onclick="openWork('poem-3')">
+
+                <span>03</span>
+
+                <strong>Alba veneziana</strong>
+
+                <i>↗</i>
+
+            </button>
+
+            <button class="work-title"
+                    onclick="openWork('poem-4')">
+
+                <span>04</span>
+
+                <strong>Quello che ti darei…</strong>
+
+                <i>↗</i>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- READER: I TESTI SONO TUTTI QUI, NASCOSTI -->
+    <!-- ================================================= -->
+
+    <section class="reader" id="reader">
+
+        <button class="close-reader"
+                onclick="closeWork()">
+            CHIUDI ×
+        </button>
+
+
+        <!-- ARTICOLO 01 -->
+
+        <article id="article-1" class="work-content">
+
+            <div class="content-label">
+                ARTICOLO / 01
+            </div>
+
+            <h1>
+                La gen-z non si annoia: diagnosi di una crisi generazionale
+            </h1>
+
+            <div class="body-text">
+
+È inutile girarci intorno, in questo mondo è impossibile vivere senza impegni. Anche quando siamo del tutto liberi, per la forma mentis che abbiamo, tendiamo a desiderare di essere impegnati. Così trionfa chiunque ci voglia tenere occupati; la noia è praticamente azzerata, ma proprio da essa nascono pensiero e fantasia. Noi gen-z, invece, ne siamo terribilmente spaventati, perché non siamo mai stati abituati a gestirla: non è semplice trovarsi con la mente alla deriva e ammaliata dalla voce della coscienza, in quanto ciò costituisce un problema al quale bisogna trovare una soluzione complessa. A questo scopo è necessaria un’iniziativa del tutto personale, mentre la quotidianità ci mette davanti impegni posti da un soggetto terzo ed estraneo e interiorizzati come <em>necessari</em> allo svolgimento della vita. Parlo di lavoro, di università, di sport, chi più ne ha più ne metta; impegni che si riflettono in una vita sociale frenetica, superficiale e condotta al solo scopo di “aver qualcosa da fare”, in pieno accordo con un sistema che <em>impone</em> l’impegno costante. Finalmente usciti dall’oblio di un’adolescenza segnata da un uso sregolato di internet e da un mondo mutevole, stiamo ora iniziando a prendere coscienza di questo difetto strutturale; limarlo, tuttavia, causa molti problemi ad alcuni soggetti più deboli.
+In un’età che precede la maturazione e l’ingresso nel mondo degli adulti, molti di noi (soprattutto quelli nati dal 2002 al 2007) sono stati vittime di un’esposizione precoce ai <em>social network</em>. Queste connessioni digitali oggi così tanto discusse e regolate erano ai primi picchi di popolarità, ma ancora abbastanza distanti dalle preoccupazioni della politica e della scienza. Per questo motivo i primi casi di depressione adolescenziale legati all’uso intensivo di social network sono stati provati sulla nostra pelle, così come il calo della soglia dell’attenzione in età scolastica, il dramma dell’incomprensione del testo e la dipendenza da telefono nella <em>teen age</em> sono stati studiati per la prima volta su “cavie” gen-z. Oggi gli adolescenti che si approcciano al mondo di internet sono protetti da regolazioni istituzionali e ricerche scientifiche ma soprattutto i genitori sono consapevoli dei rischi e <em>dovrebbero</em> promuovere un uso controllato del telefono. Noi invece siamo come la sfortunata generazione del boom delle sigarette: quando se ne scoprì la vera natura stavano già tutti lottando contro il cancro.
+A queste istanze di natura psicologica se ne sono sommate altre provenienti da un mondo esterno sempre più ostile: il COVID, la guerra Russia-Ucraina (per noi italiani a 600km scarsi dal confine, tra l’altro) e un <em>Middle East</em> instabile che sta mettendo in ginocchio l’economia globale. Come se non bastasse, due certezze che hanno retto il periodo storico antecedente al nostro si stanno indebolendo: il ceto medio e le medie potenze. Sono gli stessi leader di oggi ad affermarlo: al 56° Forum dell’Economia Globale di Davos, il PM canadese Carney è stato accolto da una standing ovation dopo un’orazione imperniata sull’importanza della salvaguardia delle medie potenze, senza le quali crollerebbe una struttura solida e collaudata—a nostro svantaggio. Inoltre la classe media, pilastro della società contemporanea, si sta svuotando. C’è chi sale, circa un terzo del totale, c’è chi scende, tutti gli altri. Il ceto che dal dopoguerra in poi offriva le possibilità per costruirsi un futuro tranquillo e un determinato <em>status</em> sociale sta crollando. Contro una tale insicurezza geopolitica ed economico-sociale, che difese ha la generazione più sovra-esposta della storia recente?
+Ad ogni modo, l’esposizione precoce ai social e una situazione geopolitico-economica ostile giocano un ruolo nel nostro maturo riconoscimento della frenesia imposta da un ordine generale ormai obsoleto. Ai danni causati da una vita lavorativa, scolastica, sportiva e sociale superficiale alcuni gen-z trovano rimedi drastici: ecco la generazione chiusa in sé stessa, gli <em>hikikomori</em>, le vittime di depressione in età giovanile. Stiamo reagendo a un morbo per il quale non abbiamo anticorpi; costruirsi quelli sbagliati può essere fatale.
+Questo mondo può anche fare a meno di noi, generazione debole e vulnerabile, e per uscirne dobbiamo imparare a convivere con la noia, la quale ci potrebbe regalare due armi importanti: un pensiero critico potenzialmente fuori dal normale (grazie ad alte percentuali di scolarizzazione rispetto alle generazioni precedenti) e una fantasia tutta da scoprire. Fino ad oggi queste risorse sono state negate da una struttura finalizzata esclusivamente a una produttività costante e che non lascia spazio alle pause. Tale sistema ci riempie di impegni a tal punto da abituarci ad essi e vedere la noia come un nemico: iniziamo dunque a sviluppare gli anticorpi giusti, iniziamo a far parlare questa generazione muta, iniziamo ad annoiarci.
+Per la cronaca, trovare la concentrazione giusta per scrivere un testo del genere è stata un’impresa titanica. No, così, per dire. Sono anch’io vittima di ciò che descrivo.
+
+            </div>
+
+        </article>
+
+
+        <!-- RACCONTO 01 -->
+
+        <article id="story-1" class="work-content">
+
+            <div class="content-label">
+                RACCONTO / 01
+            </div>
+
+            <h1>American Joe</h1>
+
+            <div class="body-text">
+
+In mezzo a quegli studenti intonsi, pieni di vita e di speranze, sembrava un decrepito cane invalido imbattutosi in una cucciolata. Essendo figlio dei suoi tempi non poteva mai fare a meno di attaccare briga con lo sventurato che si sedeva vicino a lui; tra una sferragliata e una sbuffata del tram si sentiva il suo accento inconfondibilmente americano blaterare le solite panzane.
+
+Non capitava spesso che qualcuno gli rispondesse, anzi, la maggior parte dei pendolari ormai conosceva l’elemento e stava direttamente in piedi. Così si perdevano nell’aria i soliti “in quei villaggi le ragazze venivano da te, dico sul serio, ti saltavano addosso” e “se ti ascolti quella porcheria è perché non conosci l’impatto dei Doors”. Cosa ci facesse a Lisbona un veterano del Vietnam, nato e cresciuto in un ranch californiano, non lo sapeva nemmeno il destino in persona.
+
+I turisti sembravano non crederci, tanto che molte volte distoglievano l’attenzione da qualunque cosa stessero facendo per assicurarsi che un senzatetto lisbonese avesse un accento così yankee. Evidentemente quel martedì il ragazzo che si sedette vicino a lui era di ottimo umore e gli diede la soddisfazione di un “non mi dire” e di un “davvero”. Non l’avesse mai fatto.
+
+Il vecchio iniziò a sciorinare un vortice di sciocchezze, importunando la vittima a tal punto che la costrinse a scendere due fermate prima. Il vecchio non aveva un nome, a detta sua se l’era scordato. Alcuni studenti, dunque, lo avevano ribattezzato “American Joe”. La cosa curiosa a proposito del vecchio è che nessuno l’avesse mai visto per le strade di Lisbona, neanche nei quartieri più malfamati, neanche dove solitamente si rifugiano i senzatetto.
+
+Pareva che vivesse solo all’interno del tram: nessuno l’aveva mai visto salire, nessuno l’aveva mai visto scendere. Credere ai fantasmi è per i bambini e per i sognatori, ma va anche detto che ogni giorno occupava il medesimo posto, il che era quantomeno insolito. Raccontare le proprie vecchie storie a chi non interessa è una caratteristica precipua degli anziani, un dovere cui non possono proprio sottrarsi, ma è anche un modo per sentirsi meno soli, e American Joe era inequivocabilmente solo.
+
+Per questo, provando dopo tanto tempo quell’irrefrenabile euforia del giorno di un rincontro speciale, il vecchio scese dal tram con un balzo che non gli apparteneva e si mise a inseguire il ragazzo. Nel momento in cui mise piede fuori dal mezzo, divenne invisibile agli occhi di chi stava dentro: alcuni iniziarono a stropicciarseli, altri a pizzicarsi il volto. Pur claudicante, sembrava aleggiare tra i semafori; si muoveva come un ragazzo nelle foreste vietnamite.
+
+Rispolverando gli istinti da cowboy, avvolse la vittima nel lazo ad un incrocio.
+— Che fai, scappi da un vecchio?
+Il ragazzo si girò lentamente, come di fronte al proprio boia, e le parole gli si strozzarono in gola.
+— Oh, ragazzo. Dovresti sapere che un fantasma non ti può fare del male.
+— L… lo so, ma è legittimo preoccuparsi se un senzatetto ti ha inseguito e, nonostante gli anni sulle gambe, ti ha preso. Dovresti quantomeno cambiare approccio.
+American Joe si grattò la testa e pensò ad una risposta.
+
+Non aveva riflettuto sul come attaccare una conversazione, l’istinto gli aveva tolto il tempo. Infatti non aveva preso in considerazione il fatto che il ragazzo potesse essere genuinamente spaventato.
+— Senti, giovanotto, se vuoi un caffè offerto fai strada verso un bar. Altrimenti, vai dove diavolo devi andare.
+Il ragazzo guardò l’orologio e cacciò uno sbadiglio volutamente pronunciato.
+
+Puntò il mento verso un locale sgualcito dall’altra parte della strada e s’incamminò, urtando la spalla del vecchio mentre lo superava. American Joe si mise sulle sue tracce. Era riuscito a riportare la vacca alla stalla. Dalle sedioline del patio si vedevano le onde arrivare docili a riva. Nessuno dei due aveva il coraggio di rompere il silenzio, ma era evidente che tra i due era il vecchio a dover esordire. Questo lo sapevano entrambi.
+
+— Era la prima volta che prendevi il 15E?
+— No, perché?
+— Di solito chi lo prende mi conosce e mi evita.
+— Ma io la conosco e la evito sempre, American Joe. Non so perché oggi io mi sia seduto vicino a lei.
+— Sarai stato di buonumore.
+— Tutt’altro, signore. Si vede che lei è un militare, nel profondo. Non ha l’elasticità di vedere un sentimento più complesso del buono e del cattivo umore.
+
+— Ti sembro per caso un vocabolario?
+— Quello che intendo dire è che non tutto si riduce a uno stato d’animo elementare. A dir la verità, non tutto ha un motivo ben preciso. O meglio, magari il motivo preciso ci sarà pure, ma non sempre siamo in grado di coglierlo subito. Talvolta richiede riflessione. Lei nella vita ha solo eseguito ordini. Non per offenderla, ma questo suo modo di pensare va bene per il suo mondo. Non può pretendere che vada bene anche nel mio.
+— Non l’ho mai preteso.
+
+— L’ha fatto intendere. Lei era convinto che tutto ciò è successo perché io sono di buonumore. Sbaglio?
+Arrivarono i caffè e i due sorseggiarono in silenzio la loro bevanda. Una volta finita, i loro sguardi si incrociarono come fossero duellanti fuori da un saloon. Solo dopo qualche minuto il vecchio riprese a parlare.
+— Di solito scendo al capolinea dell’ultima corsa. Nessuno scende mai con me, sono sempre l’ultimo. Nessuno mi vede mai scendere.
+
+Attendo che l’autista sistemi tutte le sue cose e scendo dopo di lui. In virtù del nostro scambio di battute serale mi lascia entrare con lui al mattino, e così nessuno mi vede mai salire.
+— Mi sta facendo crollare la leggenda di American Joe.
+— La leggenda di American Joe è crollata oggi, figliolo, quando ti sei seduto vicino a me. Vedi, io sono esattamente quello che la gente crede che io sia.
+— Pensano tutti che lei sia un fantasma.
+— Lo sono.
+
+— Non sono un romantico… vada dritto al punto, se proprio ci tiene a raccontarmi qualcosa.
+Gli occhi del vecchio iniziarono a gocciolare piano, come un rubinetto guasto. Il ragazzo non se lo aspettava e si sentì subito in colpa.
+— Scusi.
+— Non ti devi scusare, giovanotto. Non hai detto nulla di sbagliato. Perché non mi dici un po’ il tuo nome? Voglio sapere a chi sto parlando.
+— Mi chiamo Jorge, signore.
+— Bene, Jorge. Vedi, una volta io ero il tenente Cliff Harlow.
+
+Ora sono un clochard e, come se non bastasse, la caricatura di un fantasma americano che infesta la linea 15E del tram di Lisbona. Sono una mascotte, ragazzo. Agli occhi della gente non sono nulla più di questo. Forse anche agli occhi tuoi, per lungo tempo. Sai quant’è che un pendolare non mi rivolgeva la parola? Tre anni. Tre anni, Jorge.
+— Ha inseguito anche lui?
+Il vecchio non potè fare a meno di fare una smorfia divertita.
+— Sei simpatico, Jorge.
+
+No, non l’ho inseguito, dal momento che mi ha insultato e basta. A detta sua ho “guardato in modo strano” la sua ragazza. Diamine, sono strabico. Non ci posso fare nulla. Cristo, non sopporto chi se la prende con i vermi per sentirsi forte.
+— Nemmeno io, signor Harlow.
+— Ti sei preso la briga di impararti il mio nome.
+— È basilare cortesia.
+— Ti stupiresti, caro. Ad ogni modo, evito di far trapelare il mio nome. Sei il primo a cui lo dico, qui a Lisbona. Mi ricorda chi ero.
+
+Mi associa una dignità che non ho, Jorge.
+— Se magari smettesse di raccontare sempre le stesse storielle oscene ed iniziasse ad umanizzarsi la gente capirebbe meglio chi è American Joe, non crede?
+— No, Jorge. Ho perso questa gara in partenza. Ovunque io vada, sono il clochard americano che infesta i mezzi pubblici. Giro l’Europa da non so quanti anni, so come funziona. Tanto vale importunare chi mi ha tolto la dignità. Sono un fantasma per loro, per loro non esisterà mai Cliff Harlow.
+
+Io vivo solo in quanto attrazione di quel tram. Inizi a capire perché ti ho inseguito? Ho finalmente visto una speranza, Jorge. Ho finalmente realizzato di poter essere il tenente Cliff Harlow per l’ultima volta. Temevo che questo momento non sarebbe mai arrivato.
+Cliff si alzò lentamente, come si alza un vecchio, e si avviò verso il bancone per pagare. Jorge rimase seduto, ancora scosso dall’ultima mezz’ora.
+
+Dopo cinque minuti pieni il vecchio non era ancora uscito, per cui il ragazzo entrò chiedendo di lui. La vecchia proprietaria non rispose, ma indicò semplicemente il ponte. Jorge si lanciò a perdifiato verso la strada, ma il traffico gli impediva di raggiungere il vecchio tenente. Una volta attraversati i mille semafori, il ragazzo ebbe solo il tempo per gridare “Cliff”.
+
+            </div>
+
+        </article>
+
+
+        <!-- RACCONTO 02 -->
+
+        <article id="story-2" class="work-content">
+
+            <div class="content-label">
+                RACCONTO / 02
+            </div>
+
+            <h1>Le figurine</h1>
+
+            <div class="body-text">
+
+Mattia vendeva gli album di figurine fuori dalle scuole elementari perché il sorriso dei bambini, diceva, era il più ricco degli stipendi. Si vestiva bene e si curava decentemente ma era evidente che lo faceva per costume e non perché ci tenesse, un po’ come quando il figlio ateo della famiglia torna a messa e recita a memoria il credo. Spesso andava a vendere alla scuola elementare di Genga, paesello di 100 anime poco distante.
+
+Quel posticino incastrato come un ingranaggio sulla collina aveva un certo nome perché vi nacque un papa di cui Mattia si scordava sempre il nome, nonostante una signora che lo aveva preso in simpatia glielo ricordasse in continuazione e nonostante campeggiasse sull’insegna di ogni singolo negozio. Così d’altronde funziona nei posticini dimenticati da Dio ma famosi per un qualche specifico motivo. La vecchia, dopo che aveva accompagnato la nipote a scuola, invitava spesso Mattia a casa sua per un caffè.
+
+I due si facevano spesso prendere da un vivo chiacchiericcio, che puntualmente si concludeva con questa serie di battute.
+— Vivi ancora a Fabriano?
+— Certo signora, mica ho vinto la lotteria.
+— Ma che fai ancora qui… non c’è niente per uno come te.
+— E come no? Ogni giorno posso sentirvi parlare con il vostro accento e ridere senza che nessuno sappia il perché. In più, di notte si vedono le stelle.
+— *Amore de nonna*, serviva venire qua? A Treviso non scendeva mai il buio?
+
+Dopo questa domanda, lui sorrideva gentilmente e se ne andava senza dire nulla. Il copione non è mai cambiato. I suoi possedimenti si sono gradualmente ridotti da un valigione bello pieno ad uno zaino, in cui teneva il completo (sempre miracolosamente pulito) e la biancheria.
+
+Gli sfratti non l’hanno di certo aiutato sotto questo punto di vista, ma a lui bastava ciò che aveva, non gli pesava essere nullatenente; odiava piuttosto quando per un tic si leccava i baffi e sentiva le ruvide macchiette di dentifricio con la punta della lingua. Mattia accettava con entusiasmo i fondi di magazzino che l’azienda produttrice di album gli regalava.
+
+A lui sembrava che lo aiutassero disinteressatamente, ma non sapeva di avere tutt’altro che le ultime edizioni tra le mani, come credeva (e come gli facevano credere). Inizialmente i dipendenti si prendevano gioco della sua ingenuità, nonostante lui si fosse addirittura inginocchiato durante il colloquio di lavoro. Dopo qualche tempo alcuni di loro si affezionarono a lui e decisero di rivelargli la verità.
+
+Mattia era la stessa persona che anni addietro aveva creduto ai suoi amici quando gli dissero che per farsi davvero perdonare da un suo conoscente (per avergli inavvertitamente ammaccato l’auto) doveva recarsi da lui a piedi alle tre di notte, a partire da Piazza dei Signori. Alle 3.01 era già in cammino, alle 4 suonò il campanello; il ragazzo resse il gioco e Mattia non seppe mai.
+
+Forse, mentre i colleghi cercavano di spiegarsi, vide anche il sorriso di quel cristiano tirato giù dal letto nel cuore della notte, come fosse uno schermo tra lui e loro. Si presentò un lunedì dalla signora gengarina per un caffè indossando il suo abito. Era appena stato lavato e stirato: ci aveva speso gli ultimi soldi. Il resto lo lasciò alla signora “*per sua nipote*”. Mentre la vecchia preparava il caffè in cucina, Mattia rubò tutti gli oppiacei che trovò nel cassetto delle medicine.
+
+Non si celebrò il funerale; il corpo fu cremato a spese della vecchia e disperso nella gola di Frasassi.
+
+            </div>
+
+        </article>
+
+
+        <!-- POESIA 01 -->
+
+        <article id="poem-1" class="work-content">
+
+            <div class="content-label">
+                POESIA / 01
+            </div>
+
+            <h1>Siamo due pescatori…</h1>
+
+            <div class="poem">
+
+Siamo due pescatori
+Di fronte all’oceano
+Non piglieremo pesci
+Ma scruteremo l’orizzonte
+In silenzio
+Ad ascoltare le onde
+Ad annusare la schiuma
+
+Siamo due pescatori
+Su un terrazzo dipinto
+Di una casa di piastrelle
+Le abbiamo incollate noi
+Una ad una
+L’oceano le mangia
+Le scolorisce
+
+Siamo due pescatori
+In una novella
+Nei vortici del mercato
+Sgolandoci all’alba
+Bevendo caffè
+-svegli da ore-
+Ormai freddo, annacquato
+Non c’interessa
+
+Siamo due pescatori
+Se a Palacio da Pena cerchiamo la costa
+Se respirando con gli alberi
+Siamo appagati
+Pur scorticati dal tempo
+Pur levigati dagli anni
+Piegati dal vento
+Abbassiamo soltanto la nuca
+Mai penseremo a spezzarci:
+Solo nell’altro
+Sappiamo il custode
+Del nostro destino.
+
+            </div>
+
+        </article>
+
+
+        <!-- POESIA 02 -->
+
+        <article id="poem-2" class="work-content">
+
+            <div class="content-label">
+                POESIA / 02
+            </div>
+
+            <h1>Un lampo selvaggio…</h1>
+
+            <div class="poem">
+
+Un lampo selvaggio
+Le pupille blu di corrente
+Ogni volta che le giravi
+Una raffica mi avvolgeva
+Linee brune
+Sabbiose, finissime
+Vitali come un’onda
+Che nell’oceano nuota al contrario
+Ora sei sangue
+Intriso con il fumo
+L’ultima boccata
+Prima di rientrare
+
+            </div>
+
+        </article>
+
+
+        <!-- POESIA 03 -->
+
+        <article id="poem-3" class="work-content">
+
+            <div class="content-label">
+                POESIA / 03
+            </div>
+
+            <h1>Alba veneziana</h1>
+
+            <div class="poem">
+
+Che groviglio questa trama ossuta!
+Un mormorio vernacolare si leva,
+si stagliano venti
+sconquassano i soliti attori
+scalfiscono volti stuccati.
+
+L’epicentro di una tenue tempesta
+è una pupilla scapestrata
+che tesse, tesse infinite case,
+case di morbidi ragnolini
+candidi tutti di zucchero.
+
+Basterà un soffio,
+una brezza
+a spazzare via tutto.
+
+            </div>
+
+        </article>
+
+
+        <!-- POESIA 04 -->
+
+        <article id="poem-4" class="work-content">
+
+            <div class="content-label">
+                POESIA / 04
+            </div>
+
+            <h1>Quello che ti darei…</h1>
+
+            <div class="poem">
+
+Quello che ti darei
+una flebile voce
+che canta lontana
+soffia quest’anima mia
+nella tua.
+
+Uno scrigno dorato
+che luccica:
+sei te,
+una calda giornata
+di primavera:
+rinascita.
+
+            </div>
+
+        </article>
+
+    </section>
+
+</main>
+
+
+<footer>
+    <span>ROUGE SCRIVE</span>
+    <span>TREVISO — 2026</span>
+</footer>
+
+
+<script>
+
+function toggleSection(id) {
+
+    const element = document.getElementById(id);
+
+    element.classList.toggle("open");
+
+}
+
+
+function openWork(id) {
+
+    const reader = document.getElementById("reader");
+
+    document.querySelectorAll(".work-content").forEach(function(work) {
+        work.classList.remove("active");
+    });
+
+    document.getElementById(id).classList.add("active");
+
+    reader.classList.add("open");
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+function closeWork() {
+
+    const reader = document.getElementById("reader");
+
+    reader.classList.remove("open");
+
+    document.querySelectorAll(".work-content").forEach(function(work) {
+        work.classList.remove("active");
+    });
+
+    document.body.style.overflow = "";
+
+}
+
+</script>
+
+</body>
+</html>
+```
     <!-- ARTICOLI -->
 
     <section class="category" id="articoli">
