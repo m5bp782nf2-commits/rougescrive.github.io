@@ -32,35 +32,26 @@ a {
     font-family: inherit;
 }
 
-
-/* =========================
-   HEADER
-   ========================= */
+/* HEADER */
 
 header {
     height: 58px;
     padding: 0 4vw;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     border-bottom: 1px solid var(--gray-2);
-
     position: sticky;
     top: 0;
     z-index: 50;
-
     background: rgba(250,250,250,.96);
 }
 
 .site-name {
     color: var(--gray-4);
     text-decoration: none;
-
     font-size: 12px;
     font-weight: 500;
-
     letter-spacing: .04em;
 }
 
@@ -76,12 +67,9 @@ nav {
 nav a {
     color: var(--gray-3);
     text-decoration: none;
-
     font-size: 9px;
     font-weight: 500;
-
     letter-spacing: .14em;
-
     transition: color .2s ease;
 }
 
@@ -89,51 +77,35 @@ nav a:hover {
     color: var(--red);
 }
 
-
-/* =========================
-   INTRO
-   ========================= */
+/* INTRO */
 
 .intro {
     min-height: calc(100vh - 58px);
-
     padding: 5vw 4vw 4vw;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
     position: relative;
-
     border-bottom: 1px solid var(--gray-2);
 }
 
 .intro::after {
     content: "";
-
     position: absolute;
-
     left: 4vw;
     right: 4vw;
     bottom: 0;
-
     height: 1px;
-
     background: var(--gray-1);
 }
 
 .wordmark {
     margin-top: 7vw;
     margin-left: 5vw;
-
     font-size: clamp(72px, 12.5vw, 185px);
-
     line-height: .82;
-
     font-weight: 500;
-
     letter-spacing: -.085em;
-
     color: var(--gray-4);
 }
 
@@ -141,29 +113,18 @@ nav a:hover {
     color: var(--red);
 }
 
-
-/* BIO */
-
 .bio {
     margin-left: 5vw;
     margin-bottom: 2vw;
-
     padding-left: 18px;
-
     border-left: 1px solid var(--gray-2);
-
     display: flex;
     flex-direction: column;
-
     gap: 2px;
-
     font-size: 8px;
     line-height: 1.5;
-
     letter-spacing: .16em;
-
     text-transform: uppercase;
-
     color: var(--gray-3);
 }
 
@@ -171,43 +132,25 @@ nav a:hover {
     color: var(--gray-4);
 }
 
-
-/* =========================
-   CATEGORIES
-   ========================= */
+/* CATEGORIES */
 
 .category {
     border-bottom: 1px solid var(--gray-2);
 }
 
-
-/* CATEGORY TITLE */
-
 .category-title {
     width: 100%;
     min-height: 175px;
-
     padding: 0 4vw;
-
     border: 0;
-
     display: grid;
-
     grid-template-columns: 9vw 1fr 30px;
-
     align-items: center;
-
     background: var(--white);
-
     color: var(--gray-4);
-
     cursor: pointer;
-
     text-align: left;
-
-    transition:
-        background .25s ease,
-        color .25s ease;
+    transition: background .25s ease, color .25s ease;
 }
 
 .category-title:hover {
@@ -216,48 +159,32 @@ nav a:hover {
 
 .category-title span {
     align-self: start;
-
     padding-top: 29px;
-
     color: var(--red);
-
     font-size: 8px;
-
     font-weight: 500;
-
     letter-spacing: .12em;
 }
 
 .category-title strong {
     font-size: clamp(42px, 6vw, 88px);
-
     line-height: .9;
-
     font-weight: 500;
-
     letter-spacing: -.075em;
 }
 
 .category-title i {
     justify-self: end;
-
     color: var(--red);
-
     font-size: 19px;
-
     font-style: normal;
 }
 
-
-/* =========================
-   WORK LIST
-   ========================= */
+/* WORK LIST */
 
 .works {
     display: none;
-
     margin: 0 4vw;
-
     border-top: 1px solid var(--gray-2);
 }
 
@@ -268,30 +195,17 @@ nav a:hover {
 .work-title {
     width: 100%;
     min-height: 86px;
-
     padding: 0 1.8vw;
-
     display: grid;
-
     grid-template-columns: 50px 1fr 25px;
-
     align-items: center;
-
     border: 0;
-
     border-bottom: 1px solid var(--gray-2);
-
     background: var(--snow);
-
     color: var(--gray-4);
-
     cursor: pointer;
-
     text-align: left;
-
-    transition:
-        background .2s ease,
-        color .2s ease;
+    transition: background .2s ease, color .2s ease;
 }
 
 .work-title:hover {
@@ -300,21 +214,15 @@ nav a:hover {
 
 .work-title span {
     color: var(--red);
-
     font-size: 8px;
-
     font-weight: 500;
-
     letter-spacing: .1em;
 }
 
 .work-title strong {
     font-size: 17px;
-
     line-height: 1.3;
-
     font-weight: 400;
-
     letter-spacing: -.025em;
 }
 
@@ -324,34 +232,21 @@ nav a:hover {
 
 .work-title i {
     justify-self: end;
-
     color: var(--red);
-
     font-size: 14px;
-
     font-style: normal;
 }
 
-
-/* =========================
-   READER
-   ========================= */
+/* READER */
 
 .reader {
     display: none;
-
     position: fixed;
-
     inset: 0;
-
     z-index: 100;
-
     overflow-y: auto;
-
     padding: 7vw 10vw 10vw;
-
     background: var(--white);
-
     border-top: 4px solid var(--red);
 }
 
@@ -359,38 +254,22 @@ nav a:hover {
     display: block;
 }
 
-
-/* CLOSE */
-
 .close-reader {
     position: fixed;
-
     top: 25px;
     right: 4vw;
-
     border: 0;
-
     background: transparent;
-
     color: var(--red);
-
     cursor: pointer;
-
     font-size: 8px;
-
     font-weight: 500;
-
     letter-spacing: .16em;
 }
 
-
-/* CONTENT */
-
 .work-content {
     display: none;
-
     width: min(850px, 100%);
-
     margin: 0 auto;
 }
 
@@ -400,45 +279,28 @@ nav a:hover {
 
 .content-label {
     margin-bottom: 32px;
-
     color: var(--red);
-
     font-size: 8px;
-
     font-weight: 500;
-
     letter-spacing: .15em;
 }
 
 .work-content h1 {
     margin: 0 0 70px;
-
     color: var(--gray-4);
-
     font-size: clamp(42px, 6vw, 78px);
-
     line-height: .94;
-
     font-weight: 500;
-
     letter-spacing: -.075em;
 }
-
-
-/* PROSE */
 
 .body-text,
 .poem {
     font-family: inherit;
-
     color: var(--gray-4);
-
     font-size: 17px;
-
     line-height: 1.72;
-
     font-weight: 400;
-
     white-space: pre-line;
 }
 
@@ -448,32 +310,20 @@ nav a:hover {
 
 .poem {
     font-size: 18px;
-
     line-height: 1.65;
 }
 
-
-/* =========================
-   FOOTER
-   ========================= */
+/* FOOTER */
 
 footer {
     min-height: 120px;
-
     padding: 35px 4vw;
-
     display: flex;
-
     align-items: flex-start;
-
     justify-content: space-between;
-
     font-size: 8px;
-
     font-weight: 500;
-
     letter-spacing: .12em;
-
     color: var(--gray-3);
 }
 
@@ -481,53 +331,41 @@ footer span:first-child {
     color: var(--red);
 }
 
-
-/* =========================
-   MOBILE
-   ========================= */
+/* MOBILE */
 
 @media (max-width: 700px) {
 
     header {
         height: 58px;
-
         padding: 0 6vw;
     }
 
     nav {
         gap: 12px;
-
         flex-direction: column;
-
         align-items: flex-end;
     }
 
     .intro {
         min-height: calc(100vh - 58px);
-
         padding: 10vw 6vw 8vw;
     }
 
     .wordmark {
         margin-left: 4vw;
         margin-top: 18vw;
-
         font-size: clamp(62px, 18vw, 110px);
     }
 
     .bio {
         margin-left: 4vw;
-
         padding-left: 12px;
-
         font-size: 7px;
     }
 
     .category-title {
         min-height: 125px;
-
         padding: 0 6vw;
-
         grid-template-columns: 38px 1fr 20px;
     }
 
@@ -545,9 +383,7 @@ footer span:first-child {
 
     .work-title {
         min-height: 76px;
-
         padding: 10px 3vw;
-
         grid-template-columns: 32px 1fr 18px;
     }
 
@@ -557,31 +393,26 @@ footer span:first-child {
 
     .reader {
         padding: 75px 7vw 80px;
-
         border-top-width: 3px;
     }
 
     .close-reader {
         top: 22px;
-
         right: 7vw;
     }
 
     .work-content h1 {
         margin-bottom: 48px;
-
         font-size: clamp(38px, 11vw, 60px);
     }
 
     .body-text {
         font-size: 16px;
-
         line-height: 1.7;
     }
 
     .poem {
         font-size: 17px;
-
         line-height: 1.65;
     }
 
