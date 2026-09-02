@@ -1,19 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
 /* ==========================================================================
-   BRION MONUMENTAL BRUTALISM / SHARP SCI-FI THEME (V2 - CONCRETE & SHARP)
+   SENTIENT MASS / MONUMENTAL DARK SCI-FI THEME
    ========================================================================== */
 
 :root {
-    --white: #ffffff;
-    --concrete-light: #2a2a2a; /* Cemento chiaro */
-    --concrete-mid: #1c1c1c;   /* Cemento intermedio */
-    --concrete-dark: #121212;  /* Cemento scuro per sfondi */
-    --border-gray: #3a3a3a;    /* Incisioni netti */
-    --text-muted: #888888;     /* Testo secondario grigio */
-    --text-bright: #d4d4d4;    /* Testo principale grigio chiaro */
-    --red-blood: #8b0000;      /* Rosso sangue scuro */
-    --red-sharp: #ff1111;      /* Rosso sangue vivo */
+    --black-void: #000000;
+    --dark-surface: #0a0a0a;
+    --structure-gray: #181818;
+    --border-line: #2b2b2b;
+    --text-silver: #a0a0a0;
+    --text-white: #f0f0f0;
+    --red-core: #ff0033;      /* Rosso vivido come l'interfaccia */
+    --red-dim: #8b001a;
 }
 
 * {
@@ -22,13 +21,13 @@
 
 html {
     scroll-behavior: smooth;
-    background-color: var(--concrete-dark);
+    background-color: var(--black-void);
 }
 
 body {
     margin: 0;
-    background: var(--concrete-dark);
-    color: var(--text-bright);
+    background: var(--black-void);
+    color: var(--text-silver);
     font-family: 'Space Mono', monospace, sans-serif;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
@@ -40,7 +39,7 @@ a {
 }
 
 /* =========================
-   HEADER (CORRETTO ALLINEAMENTO)
+   HEADER
 ========================= */
 
 header {
@@ -51,29 +50,28 @@ header {
     align-items: center;
     justify-content: space-between;
 
-    border-bottom: 1px solid var(--border-gray);
+    border-bottom: 1px solid var(--border-line);
 
     position: sticky;
     top: 0;
     z-index: 50;
 
-    background: rgba(18, 18, 18, 0.98);
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(8px);
 }
 
 .site-name {
-    color: var(--text-bright);
+    color: var(--text-white);
     text-decoration: none;
 
     font-size: 11px;
     font-weight: 700;
-    letter-spacing: .15em;
+    letter-spacing: .2em;
     text-transform: uppercase;
-    display: flex;
-    align-items: center;
 }
 
 .site-name span {
-    color: var(--red-sharp);
+    color: var(--red-core);
 }
 
 nav {
@@ -84,24 +82,22 @@ nav {
 }
 
 nav a {
-    color: var(--text-muted);
+    color: var(--text-silver);
     text-decoration: none;
 
     font-size: 10px;
     font-weight: 400;
-    letter-spacing: .15em;
+    letter-spacing: .18em;
     text-transform: uppercase;
     transition: color 0.15s ease;
-    display: inline-flex;
-    align-items: center;
 }
 
 nav a:hover {
-    color: var(--red-sharp);
+    color: var(--red-core);
 }
 
 /* =========================
-   INTRO
+   INTRO (MEGASTRUCTURE MONUMENT)
 ========================= */
 
 .intro {
@@ -113,10 +109,14 @@ nav a:hover {
     flex-direction: column;
     justify-content: space-between;
 
-    border-bottom: 1px solid var(--border-gray);
+    border-bottom: 1px solid var(--border-line);
 
     position: relative;
-    background: var(--concrete-dark);
+    background: var(--black-void);
+    
+    /* Pattern di righe verticali finissime che riprende la megastruttura del video */
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 32px 100%;
 }
 
 .intro::before {
@@ -129,7 +129,7 @@ nav a:hover {
     width: 1px;
     height: 100%;
 
-    background: var(--border-gray);
+    background: var(--border-line);
 }
 
 .wordmark {
@@ -137,17 +137,17 @@ nav a:hover {
     margin-top: 5vw;
 
     font-size: clamp(60px, 12vw, 160px);
-    line-height: .82;
+    line-height: .8;
 
     font-weight: 700;
-    letter-spacing: -.05em;
+    letter-spacing: -.06em;
     text-transform: lowercase;
 
-    color: var(--text-bright);
+    color: var(--text-white);
 }
 
 .wordmark span {
-    color: var(--red-sharp);
+    color: var(--red-core);
 }
 
 /* BIO */
@@ -156,7 +156,7 @@ nav a:hover {
     margin-left: 5vw;
     padding-left: 2vw;
 
-    border-left: 2px solid var(--red-blood);
+    border-left: 1px solid var(--red-core);
 
     display: flex;
     flex-direction: column;
@@ -165,23 +165,23 @@ nav a:hover {
     font-size: 9px;
     line-height: 1.45;
 
-    letter-spacing: .2em;
+    letter-spacing: .22em;
     text-transform: uppercase;
 
-    color: var(--text-muted);
+    color: var(--text-silver);
 }
 
 .bio div:first-child {
-    color: var(--text-bright);
+    color: var(--text-white);
     font-weight: 700;
 }
 
 /* =========================
-   CATEGORIE (GRIGIO CEMENTO)
+   CATEGORIE (MONOLITI SCURI)
 ========================= */
 
 .category {
-    border-bottom: 1px solid var(--border-gray);
+    border-bottom: 1px solid var(--border-line);
 }
 
 .category-title {
@@ -195,24 +195,24 @@ nav a:hover {
     align-items: center;
 
     border: 0;
-    background: var(--concrete-mid);
+    background: var(--dark-surface);
 
-    color: var(--text-bright);
+    color: var(--text-white);
 
     cursor: pointer;
     text-align: left;
-    transition: background 0.15s ease;
+    transition: background 0.2s ease;
 }
 
 .category-title span {
     align-self: start;
     padding-top: 28px;
 
-    color: var(--red-sharp);
+    color: var(--red-core);
 
     font-size: 10px;
     font-weight: 700;
-    letter-spacing: .1em;
+    letter-spacing: .15em;
 }
 
 .category-title strong {
@@ -226,7 +226,7 @@ nav a:hover {
 .category-title i {
     justify-self: end;
 
-    color: var(--red-sharp);
+    color: var(--red-core);
 
     font-size: 22px;
     font-style: normal;
@@ -234,7 +234,7 @@ nav a:hover {
 }
 
 .category-title:hover {
-    background: var(--concrete-light);
+    background: var(--structure-gray);
 }
 
 /* =========================
@@ -246,8 +246,8 @@ nav a:hover {
 
     margin: 0 7vw;
 
-    border-top: 1px solid var(--border-gray);
-    background: var(--concrete-dark);
+    border-top: 1px solid var(--border-line);
+    background: var(--black-void);
 }
 
 .works.open {
@@ -265,11 +265,11 @@ nav a:hover {
     align-items: center;
 
     border: 0;
-    border-bottom: 1px solid var(--border-gray);
+    border-bottom: 1px solid var(--border-line);
 
-    background: #181818;
+    background: #050505;
 
-    color: var(--text-muted);
+    color: var(--text-silver);
 
     cursor: pointer;
     text-align: left;
@@ -277,11 +277,11 @@ nav a:hover {
 }
 
 .work-title span {
-    color: var(--red-blood);
+    color: var(--red-dim);
 
     font-size: 9px;
     font-weight: 700;
-    letter-spacing: .1em;
+    letter-spacing: .12em;
 }
 
 .work-title strong {
@@ -290,30 +290,30 @@ nav a:hover {
 
     font-weight: 400;
     letter-spacing: .02em;
-    color: var(--text-bright);
+    color: var(--text-white);
 }
 
 .work-title i {
     justify-self: end;
 
-    color: var(--red-blood);
+    color: var(--red-dim);
 
     font-size: 14px;
     font-style: normal;
 }
 
 .work-title:hover {
-    background: var(--concrete-light);
-    border-left: 3px solid var(--red-sharp);
+    background: var(--dark-surface);
+    border-left: 2px solid var(--red-core);
 }
 
 .work-title:hover strong {
-    color: var(--white);
+    color: var(--text-white);
 }
 
 .work-title:hover span,
 .work-title:hover i {
-    color: var(--red-sharp);
+    color: var(--red-core);
 }
 
 /* =========================
@@ -332,9 +332,9 @@ nav a:hover {
 
     padding: 70px 9vw 100px;
 
-    background: #151515;
+    background: var(--black-void);
 
-    border-top: 2px solid var(--red-sharp);
+    border-top: 1px solid var(--red-core);
 }
 
 .reader.open {
@@ -346,24 +346,25 @@ nav a:hover {
     top: 20px;
     right: 6vw;
 
-    border: 1px solid var(--red-blood);
-    padding: 6px 14px;
-    background: var(--concrete-dark);
+    border: 1px solid var(--border-line);
+    padding: 8px 16px;
+    background: var(--black-void);
 
-    color: var(--red-sharp);
+    color: var(--red-core);
 
     cursor: pointer;
 
     font-size: 9px;
     font-weight: 700;
-    letter-spacing: .15em;
+    letter-spacing: .2em;
     text-transform: uppercase;
-    transition: all 0.15s ease;
+    transition: all 0.2s ease;
 }
 
 .close-reader:hover {
-    background: var(--red-blood);
-    color: var(--white);
+    background: var(--red-core);
+    color: var(--black-void);
+    border-color: var(--red-core);
 }
 
 .work-content {
@@ -381,31 +382,31 @@ nav a:hover {
 .content-label {
     margin-bottom: 32px;
 
-    color: var(--red-sharp);
+    color: var(--red-core);
 
     font-size: 10px;
     font-weight: 700;
 
-    letter-spacing: .2em;
+    letter-spacing: .25em;
     text-transform: uppercase;
 }
 
 .work-content h1 {
     margin: 0 0 65px;
 
-    color: var(--white);
+    color: var(--text-white);
 
     font-size: clamp(32px, 5.5vw, 64px);
     line-height: 1.05;
 
     font-weight: 700;
     letter-spacing: -.03em;
-    border-bottom: 1px solid var(--border-gray);
+    border-bottom: 1px solid var(--border-line);
     padding-bottom: 30px;
 }
 
 /* =========================
-   TESTO (RIPRISTINATO PULITO)
+   TESTO
 ========================= */
 
 .body-text,
@@ -413,28 +414,28 @@ nav a:hover {
     font-family: inherit;
 
     font-size: 15px;
-    line-height: 1.8;
+    line-height: 1.85;
 
     font-weight: 400;
 
     white-space: pre-line;
 
-    color: var(--text-bright);
+    color: var(--text-silver);
 }
 
 .body-text em {
     font-style: italic;
-    color: var(--white);
+    color: var(--text-white);
 }
 
 /* POESIA */
 
 .poem {
     font-size: 16px;
-    line-height: 1.75;
-    border-left: 1px solid var(--red-blood);
-    padding-left: 20px;
-    color: var(--text-bright);
+    line-height: 1.8;
+    border-left: 1px solid var(--border-line);
+    padding-left: 24px;
+    color: var(--text-white);
 }
 
 /* =========================
@@ -452,16 +453,16 @@ footer {
     font-size: 9px;
     font-weight: 700;
 
-    letter-spacing: .15em;
+    letter-spacing: .18em;
     text-transform: uppercase;
 
-    color: var(--text-muted);
-    background: var(--concrete-dark);
-    border-top: 1px solid var(--border-gray);
+    color: var(--text-silver);
+    background: var(--black-void);
+    border-top: 1px solid var(--border-line);
 }
 
 footer span:first-child {
-    color: var(--red-sharp);
+    color: var(--red-core);
 }
 
 /* =========================
