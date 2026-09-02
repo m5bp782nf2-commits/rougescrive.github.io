@@ -1,520 +1,277 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+/* ==========================================================================
+   ROUGE SCRIVE - BRUTALIST SCI-FI / 70s GRUNGE THEME
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Special+Elite&display=swap');
 
 :root {
-    --white: #fff;
-    --light: #ededed;
-    --gray: #999;
-    --dark-gray: #444;
-    --red: #980000;
+    --bg-dark: #0a0a0a;
+    --bg-panel: #141414;
+    --text-main: #b8b8b8;
+    --text-bright: #e6e6e6;
+    --blood-red: #8b0000;
+    --blood-bright: #ff0000;
+    --terminal-grid: rgba(255, 255, 255, 0.03);
+    
+    /* Font: "Share Tech Mono" per il look da terminale sci-fi, "Special Elite" per il tocco macchina da scrivere/grunge */
+    --font-mono: 'Share Tech Mono', monospace;
+    --font-typewriter: 'Special Elite', monospace;
+    
+    --border-thick: 3px solid var(--blood-red);
+    --border-thin: 1px solid #2a2a2a;
 }
 
-* {
+/* ==========================================================================
+   1. RESET & DISTORTION EFFECTS
+   ========================================================================== */
+*, *::before, *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-html {
-    scroll-behavior: smooth;
+/* Overlay griglia schermo anni '70 / CRT */
+body::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+    z-index: 999;
+    background-size: 100% 3px, 6px 100%;
+    pointer-events: none;
 }
 
 body {
-    margin: 0;
-    background: var(--white);
-    color: var(--dark-gray);
-    font-family: Inter, Helvetica, Arial, sans-serif;
-    font-weight: 400;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-mono);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    padding: 1rem;
+    /* Effetto griglia brutalista di sfondo */
+    background-image: 
+        linear-gradient(var(--terminal-grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--terminal-grid) 1px, transparent 1px);
+    background-size: 20px 20px;
 }
 
-button,
-a {
-    font-family: inherit;
-}
-
-
-/* =========================
-   HEADER
-========================= */
-
+/* ==========================================================================
+   2. HEADER & NAVIGATION
+   ========================================================================== */
 header {
-    height: 62px;
-    padding: 0 5vw;
-
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    border: var(--border-thick);
+    background: var(--bg-panel);
     display: flex;
-    align-items: center;
     justify-content: space-between;
-
-    border-bottom: 1px solid var(--gray);
-
-    position: sticky;
-    top: 0;
-    z-index: 50;
-
-    background: rgba(255,255,255,.97);
+    align-items: center;
+    box-shadow: 6px 6px 0px #000;
 }
 
-.site-name {
-    color: var(--dark-gray);
+header a {
+    color: var(--text-bright);
     text-decoration: none;
-
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: .08em;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-.site-name span {
-    color: var(--red);
+header a span {
+    color: var(--blood-bright);
+    text-shadow: 0 0 5px var(--blood-red);
 }
 
 nav {
     display: flex;
-    gap: 28px;
+    gap: 1.5rem;
 }
 
 nav a {
-    color: var(--dark-gray);
+    color: var(--text-main);
     text-decoration: none;
-
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: .1em;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.3rem 0.6rem;
+    border: 1px solid transparent;
+    transition: all 0.15s ease;
 }
 
 nav a:hover {
-    color: var(--red);
+    color: var(--blood-bright);
+    border-color: var(--blood-red);
+    background: #000;
 }
 
+/* ==========================================================================
+   3. HERO / PRESENTAZIONE (GIOVANNI, TREVISO, 21 ANNI)
+   ========================================================================== */
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+}
 
-/* =========================
-   INTRO
-========================= */
-
-.intro {
-    min-height: calc(100vh - 62px);
-
-    padding: 7vw 7vw 5vw;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    border-bottom: 1px solid var(--gray);
-
+/* Prima section: Il blocco identificativo */
+main > section:first-of-type {
+    border: 2px solid #333;
+    background: #000;
+    padding: 2.5rem;
+    margin-bottom: 3rem;
     position: relative;
 }
 
-.intro::before {
-    content: "";
-
+main > section:first-of-type::before {
+    content: "SYSTEM_ID // USER_DATA";
     position: absolute;
-    left: 7vw;
-    top: 0;
-
-    width: 1px;
-    height: 100%;
-
-    background: var(--gray);
+    top: -12px;
+    left: 15px;
+    background: var(--blood-red);
+    color: #000;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 0 6rem 0 0.4rem;
+    clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
 }
 
-.wordmark {
-    margin-left: 5vw;
-    margin-top: 5vw;
-
-    font-size: clamp(70px, 13vw, 180px);
-    line-height: .82;
-
-    font-weight: 500;
-    letter-spacing: -.075em;
-
-    color: var(--dark-gray);
-}
-
-.wordmark span {
-    color: var(--red);
-}
-
-
-/* BIO MOLTO PIÙ PICCOLA */
-
-.bio {
-    margin-left: 5vw;
-    padding-left: 2vw;
-
-    border-left: 1px solid var(--gray);
-
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-
-    font-size: 8px;
-    line-height: 1.45;
-
-    letter-spacing: .12em;
+/* "rouge scrive" nella hero */
+main > section:first-of-type div:first-child {
+    font-size: 3rem;
+    font-weight: bold;
     text-transform: uppercase;
-
-    color: var(--gray);
+    letter-spacing: -1px;
+    color: var(--text-bright);
+    margin-bottom: 1rem;
+    font-family: var(--font-typewriter);
 }
 
-.bio div:first-child {
-    color: var(--dark-gray);
+main > section:first-of-type div:first-child span {
+    color: var(--blood-bright);
+    background: var(--blood-red);
+    color: #000;
+    padding: 0 0.5rem;
 }
 
-
-/* =========================
-   CATEGORIE
-========================= */
-
-.category {
-    border-bottom: 1px solid var(--gray);
+/* Giovanni / Treviso / 21 anni */
+main > section:first-of-type div:last-child {
+    display: flex;
+    gap: 2rem;
+    color: var(--text-main);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    border-top: 1px dashed #333;
+    padding-top: 1rem;
 }
 
-.category-title {
-    width: 100%;
-    min-height: 145px;
+main > section:first-of-type div:last-child div::before {
+    content: "> ";
+    color: var(--blood-bright);
+}
 
-    padding: 0 7vw;
+/* ==========================================================================
+   4. ARTICOLI, RACCONTI & POESIE
+   ========================================================================== */
+article {
+    background: var(--bg-panel);
+    border: 1px solid #262626;
+    border-left: 5px solid var(--blood-red);
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+    box-shadow: 8px 8px 0px #000;
+}
 
-    display: grid;
-    grid-template-columns: 8vw 1fr 4vw;
-    align-items: center;
+/* Etichette: ARTICOLO / 01, RACCONTO / 01, etc. */
+article > div:first-child {
+    font-size: 0.85rem;
+    color: var(--blood-bright);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    background: #000;
+    padding: 0.2rem 0.5rem;
+    border: 1px solid #333;
+}
 
-    border: 0;
-    background: var(--white);
+article h1 {
+    font-family: var(--font-typewriter);
+    font-size: 2rem;
+    color: var(--text-bright);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
 
-    color: var(--dark-gray);
-
-    cursor: pointer;
+/* Corpo del testo */
+article > div:last-child {
+    color: var(--text-main);
+    white-space: pre-line; /* Fondamentale per mantenere la struttura di testi e poesie */
     text-align: left;
+    font-size: 1.05rem;
 }
 
-.category-title span {
-    align-self: start;
-    padding-top: 28px;
-
-    color: var(--red);
-
-    font-size: 9px;
-    font-weight: 500;
-}
-
-.category-title strong {
-    font-size: clamp(38px, 6vw, 82px);
-    font-weight: 500;
-
-    letter-spacing: -.065em;
-}
-
-.category-title i {
-    justify-self: end;
-
-    color: var(--red);
-
-    font-size: 25px;
+/* Dettagli grunge nel testo (corsivi/enfasi) */
+article em {
+    color: var(--blood-bright);
     font-style: normal;
-    font-weight: 400;
+    text-decoration: underline;
 }
 
-.category-title:hover {
-    background: var(--light);
-}
-
-
-/* =========================
-   TITOLI
-========================= */
-
-.works {
-    display: none;
-
-    margin: 0 7vw;
-
-    border-top: 1px solid var(--gray);
-}
-
-.works.open {
-    display: block;
-}
-
-.work-title {
-    width: 100%;
-    min-height: 82px;
-
-    padding: 0 2vw;
-
-    display: grid;
-    grid-template-columns: 55px 1fr 30px;
-    align-items: center;
-
-    border: 0;
-    border-bottom: 1px solid var(--gray);
-
-    background: var(--light);
-
-    color: var(--dark-gray);
-
-    cursor: pointer;
-    text-align: left;
-}
-
-.work-title span {
-    color: var(--red);
-
-    font-size: 9px;
-    font-weight: 500;
-}
-
-.work-title strong {
-    font-size: 19px;
-    line-height: 1.25;
-
-    font-weight: 400;
-    letter-spacing: -.015em;
-}
-
-.work-title i {
-    justify-self: end;
-
-    color: var(--red);
-
-    font-size: 16px;
-    font-style: normal;
-}
-
-.work-title:hover {
-    background: var(--white);
-}
-
-.work-title:hover strong {
-    color: var(--red);
-}
-
-
-/* =========================
-   LETTORE
-   DIVENTA UNA PAGINA
-   SOVRAPPOSTA
-========================= */
-
-.reader {
-    display: none;
-
-    position: fixed;
-    inset: 0;
-
-    z-index: 100;
-
-    overflow-y: auto;
-
-    padding: 70px 9vw 100px;
-
-    background: var(--white);
-
-    border-top: 3px solid var(--red);
-}
-
-.reader.open {
-    display: block;
-}
-
-.close-reader {
-    position: fixed;
-    top: 25px;
-    right: 6vw;
-
-    border: 0;
-    background: transparent;
-
-    color: var(--red);
-
-    cursor: pointer;
-
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: .12em;
-}
-
-.work-content {
-    display: none;
-
-    width: min(850px, 100%);
-
-    margin: 0 auto;
-}
-
-.work-content.active {
-    display: block;
-}
-
-.content-label {
-    margin-bottom: 32px;
-
-    color: var(--red);
-
-    font-size: 9px;
-    font-weight: 500;
-
-    letter-spacing: .12em;
-}
-
-.work-content h1 {
-    margin: 0 0 65px;
-
-    color: var(--dark-gray);
-
-    font-size: clamp(38px, 6vw, 72px);
-    line-height: .98;
-
-    font-weight: 500;
-    letter-spacing: -.06em;
-}
-
-
-/* =========================
-   TESTO
-   STESSO FONT DEL SITO
-========================= */
-
-.body-text,
-.poem {
-    font-family: inherit;
-
-    font-size: 17px;
-    line-height: 1.7;
-
-    font-weight: 400;
-
-    white-space: pre-line;
-
-    color: var(--dark-gray);
-}
-
-.body-text em {
-    font-style: italic;
-}
-
-
-/* POESIA */
-
-.poem {
-    font-size: 18px;
-    line-height: 1.65;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
+/* ==========================================================================
+   5. FOOTER
+   ========================================================================== */
 footer {
-    min-height: 100px;
-
-    padding: 30px 7vw;
-
+    max-width: 900px;
+    margin: 4rem auto 2rem;
+    padding: 1.5rem;
+    background: #000;
+    border: 1px solid #333;
     display: flex;
     justify-content: space-between;
-
-    font-size: 8px;
-    font-weight: 500;
-
-    letter-spacing: .1em;
-
-    color: var(--gray);
+    font-size: 0.85rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-footer span:first-child {
-    color: var(--red);
+footer span:first-child::before {
+    content: "■ ";
+    color: var(--blood-red);
 }
 
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 700px) {
-
+/* ==========================================================================
+   6. RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 768px) {
     header {
-        height: 58px;
-        padding: 0 6vw;
-    }
-
-    nav {
-        gap: 12px;
         flex-direction: column;
-        align-items: flex-end;
+        gap: 1.5rem;
+        align-items: flex-start;
+    }
+    
+    nav {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    main > section:first-of-type div:first-child {
+        font-size: 2rem;
+    }
+    
+    main > section:first-of-type div:last-child {
+        flex-direction: column;
+        gap: 0.5rem;
     }
 
-    .intro {
-        min-height: calc(100vh - 58px);
-
-        padding: 15vw 7vw 10vw;
+    article {
+        padding: 1.5rem;
     }
 
-    .intro::before {
-        left: 7vw;
-    }
-
-    .wordmark {
-        margin-left: 6vw;
-        margin-top: 15vw;
-
-        font-size: clamp(62px, 18vw, 110px);
-    }
-
-    .bio {
-        margin-left: 6vw;
-        padding-left: 4vw;
-
-        font-size: 7px;
-    }
-
-    .category-title {
-        min-height: 110px;
-
-        padding: 0 7vw;
-
-        grid-template-columns: 40px 1fr 25px;
-    }
-
-    .category-title strong {
-        font-size: clamp(32px, 10vw, 55px);
-    }
-
-    .works {
-        margin: 0 7vw;
-    }
-
-    .work-title {
-        min-height: 75px;
-
-        padding: 12px 3vw;
-
-        grid-template-columns: 35px 1fr 20px;
-    }
-
-    .work-title strong {
-        font-size: 16px;
-    }
-
-    .reader {
-        padding: 70px 7vw 80px;
-    }
-
-    .close-reader {
-        top: 22px;
-        right: 7vw;
-    }
-
-    .work-content h1 {
-        margin-bottom: 45px;
-
-        font-size: clamp(36px, 11vw, 60px);
-    }
-
-    .body-text {
-        font-size: 16px;
-        line-height: 1.7;
-    }
-
-    .poem {
-        font-size: 17px;
-        line-height: 1.65;
+    article h1 {
+        font-size: 1.5rem;
     }
 }
