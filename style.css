@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;700&display=swap');
+
+:root {
+    --white: #f7f7f5;
+    --black: #171717;
+    --gray: #777;
+    --light-gray: #c8c8c5;
+    --red: #a00000;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--white);
+    color: var(--black);
+    font-family: Inter, Arial, sans-serif;
+}
+
+
+/* HEADER */
+
+header {
+    height: 76px;
+    padding: 0 4vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 2px solid var(--black);
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: rgba(247, 247, 245, 0.97);
+}
+
+.logo {
+    font-family: "DM Mono", monospace;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+}
+
+nav {
+    display: flex;
+    gap: 2.2rem;
+}
+
+nav a {
+    color: var(--black);
+    text-decoration: none;
+
+    font-family: "DM Mono", monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: var(--red);
+}
+
+
+/* LAYOUT */
+
+main {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 58vh;
+
+    display: flex;
+    align-items: flex-end;
+
+    padding: 8vw 5vw 7vw;
+
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.bio {
+    display: flex;
+    flex-direction: column;
+
+    font-size: clamp(42px, 8vw, 112px);
+    line-height: 0.88;
+
+    font-weight: 700;
+    letter-spacing: -0.065em;
+}
+
+.bio span:first-child {
+    color: var(--red);
+}
+
+
+/* SECTIONS */
+
+.section {
+    padding: 8vw 5vw 2vw;
+}
+
+.section-label {
+    margin-bottom: 5vw;
+
+    padding-top: 12px;
+
+    border-top: 2px solid var(--black);
+
+    color: var(--red);
+
+    font-family: "DM Mono", monospace;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+}
+
+article {
+    max-width: 880px;
+    margin-bottom: 9vw;
+}
+
+article h1 {
+    margin: 0 0 2rem;
+
+    font-size: clamp(26px, 4vw, 52px);
+    line-height: 1.02;
+
+    font-weight: 700;
+    letter-spacing: -0.045em;
+}
+
+
+/* TESTI */
+
+.text,
+.poem {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 18px;
+    line-height: 1.55;
+
+    white-space: pre-line;
+}
+
+.text em {
+    font-style: italic;
+}
+
+
+/* POESIA */
+
+.poem {
+    font-size: 20px;
+    line-height: 1.35;
+}
+
+
+/* FOOTER */
+
+footer {
+    margin-top: 5vw;
+    padding: 25px 5vw 40px;
+
+    border-top: 2px solid var(--black);
+
+    color: var(--gray);
+
+    font-family: "DM Mono", monospace;
+    font-size: 12px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    header {
+        height: auto;
+        min-height: 68px;
+
+        padding: 20px 5vw;
+
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+    nav {
+        gap: 1rem;
+
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .hero {
+        min-height: 48vh;
+
+        padding: 20vw 6vw 12vw;
+    }
+
+    .section {
+        padding: 18vw 6vw 2vw;
+    }
+
+    .text {
+        font-size: 17px;
+    }
+
+    .poem {
+        font-size: 18px;
+    }
+}
