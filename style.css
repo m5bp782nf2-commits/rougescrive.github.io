@@ -1,277 +1,556 @@
-/* ==========================================================================
-   ROUGE SCRIVE - BRUTALIST SCI-FI / 70s GRUNGE THEME
-   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Special+Elite&display=swap');
+/* ==========================================================================
+   BRION MONUMENTAL BRUTALISM / SHARP SCI-FI THEME
+   ========================================================================== */
 
 :root {
-    --bg-dark: #0a0a0a;
-    --bg-panel: #141414;
-    --text-main: #b8b8b8;
-    --text-bright: #e6e6e6;
-    --blood-red: #8b0000;
-    --blood-bright: #ff0000;
-    --terminal-grid: rgba(255, 255, 255, 0.03);
-    
-    /* Font: "Share Tech Mono" per il look da terminale sci-fi, "Special Elite" per il tocco macchina da scrivere/grunge */
-    --font-mono: 'Share Tech Mono', monospace;
-    --font-typewriter: 'Special Elite', monospace;
-    
-    --border-thick: 3px solid var(--blood-red);
-    --border-thin: 1px solid #2a2a2a;
+    --white: #ffffff;
+    --light: #1e1e1e;       /* Cemento scuro */
+    --gray: #333333;        /* Giunzioni/Incisioni */
+    --dark-gray: #b0b0b0;   /* Testo secondario */
+    --text-bright: #e0e0e0; /* Testo principale */
+    --red: #8b0000;         /* Rosso sangue ossidato */
+    --red-bright: #ff1111;  /* Rosso sangue vivo */
+    --bg-main: #0a0a0a;     /* Antracite profondo */
 }
 
-/* ==========================================================================
-   1. RESET & DISTORTION EFFECTS
-   ========================================================================== */
-*, *::before, *::after {
+* {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
-/* Overlay griglia schermo anni '70 / CRT */
-body::before {
-    content: " ";
-    display: block;
-    position: fixed;
-    top: 0; left: 0; bottom: 0; right: 0;
-    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
-                linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
-    z-index: 999;
-    background-size: 100% 3px, 6px 100%;
-    pointer-events: none;
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-main);
 }
 
 body {
-    background-color: var(--bg-dark);
-    color: var(--text-main);
-    font-family: var(--font-mono);
-    font-size: 1.05rem;
-    line-height: 1.6;
-    padding: 1rem;
-    /* Effetto griglia brutalista di sfondo */
-    background-image: 
-        linear-gradient(var(--terminal-grid) 1px, transparent 1px),
-        linear-gradient(90deg, var(--terminal-grid) 1px, transparent 1px);
-    background-size: 20px 20px;
+    margin: 0;
+    background: var(--bg-main);
+    color: var(--text-bright);
+    font-family: 'Space Mono', monospace, sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* ==========================================================================
-   2. HEADER & NAVIGATION
-   ========================================================================== */
+button,
+a {
+    font-family: inherit;
+}
+
+/* =========================
+   HEADER
+========================= */
+
 header {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-    border: var(--border-thick);
-    background: var(--bg-panel);
+    height: 62px;
+    padding: 0 5vw;
+
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    box-shadow: 6px 6px 0px #000;
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--gray);
+
+    position: sticky;
+    top: 0;
+    z-index: 50;
+
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(4px);
 }
 
-header a {
+.site-name {
     color: var(--text-bright);
     text-decoration: none;
-    font-size: 1.4rem;
-    font-weight: bold;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .15em;
     text-transform: uppercase;
-    letter-spacing: 2px;
 }
 
-header a span {
-    color: var(--blood-bright);
-    text-shadow: 0 0 5px var(--blood-red);
+.site-name span {
+    color: var(--red-bright);
 }
 
 nav {
     display: flex;
-    gap: 1.5rem;
+    gap: 28px;
 }
 
 nav a {
-    color: var(--text-main);
+    color: var(--dark-gray);
     text-decoration: none;
-    font-size: 0.9rem;
+
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: .15em;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 0.3rem 0.6rem;
-    border: 1px solid transparent;
-    transition: all 0.15s ease;
+    transition: color 0.15s ease;
 }
 
 nav a:hover {
-    color: var(--blood-bright);
-    border-color: var(--blood-red);
-    background: #000;
+    color: var(--red-bright);
 }
 
-/* ==========================================================================
-   3. HERO / PRESENTAZIONE (GIOVANNI, TREVISO, 21 ANNI)
-   ========================================================================== */
-main {
-    max-width: 900px;
-    margin: 2rem auto;
-}
+/* =========================
+   INTRO
+========================= */
 
-/* Prima section: Il blocco identificativo */
-main > section:first-of-type {
-    border: 2px solid #333;
-    background: #000;
-    padding: 2.5rem;
-    margin-bottom: 3rem;
-    position: relative;
-}
+.intro {
+    min-height: calc(100vh - 62px);
 
-main > section:first-of-type::before {
-    content: "SYSTEM_ID // USER_DATA";
-    position: absolute;
-    top: -12px;
-    left: 15px;
-    background: var(--blood-red);
-    color: #000;
-    font-size: 0.75rem;
-    font-weight: bold;
-    padding: 0 6rem 0 0.4rem;
-    clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
-}
+    padding: 7vw 7vw 5vw;
 
-/* "rouge scrive" nella hero */
-main > section:first-of-type div:first-child {
-    font-size: 3rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: -1px;
-    color: var(--text-bright);
-    margin-bottom: 1rem;
-    font-family: var(--font-typewriter);
-}
-
-main > section:first-of-type div:first-child span {
-    color: var(--blood-bright);
-    background: var(--blood-red);
-    color: #000;
-    padding: 0 0.5rem;
-}
-
-/* Giovanni / Treviso / 21 anni */
-main > section:first-of-type div:last-child {
     display: flex;
-    gap: 2rem;
-    color: var(--text-main);
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    border-top: 1px dashed #333;
-    padding-top: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--gray);
+
+    position: relative;
+    background: var(--bg-main);
 }
 
-main > section:first-of-type div:last-child div::before {
-    content: "> ";
-    color: var(--blood-bright);
+.intro::before {
+    content: "";
+
+    position: absolute;
+    left: 7vw;
+    top: 0;
+
+    width: 1px;
+    height: 100%;
+
+    background: var(--gray);
 }
 
-/* ==========================================================================
-   4. ARTICOLI, RACCONTI & POESIE
-   ========================================================================== */
-article {
-    background: var(--bg-panel);
-    border: 1px solid #262626;
-    border-left: 5px solid var(--blood-red);
-    padding: 2.5rem;
-    margin-bottom: 3rem;
-    box-shadow: 8px 8px 0px #000;
-}
+.wordmark {
+    margin-left: 5vw;
+    margin-top: 5vw;
 
-/* Etichette: ARTICOLO / 01, RACCONTO / 01, etc. */
-article > div:first-child {
-    font-size: 0.85rem;
-    color: var(--blood-bright);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-    display: inline-block;
-    background: #000;
-    padding: 0.2rem 0.5rem;
-    border: 1px solid #333;
-}
+    font-size: clamp(60px, 12vw, 160px);
+    line-height: .82;
 
-article h1 {
-    font-family: var(--font-typewriter);
-    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -.05em;
+    text-transform: lowercase;
+
     color: var(--text-bright);
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
+}
+
+.wordmark span {
+    color: var(--red-bright);
+}
+
+/* BIO MOLTO PIÙ PICCOLA */
+
+.bio {
+    margin-left: 5vw;
+    padding-left: 2vw;
+
+    border-left: 1px solid var(--red);
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    font-size: 9px;
+    line-height: 1.45;
+
+    letter-spacing: .2em;
+    text-transform: uppercase;
+
+    color: var(--dark-gray);
+}
+
+.bio div:first-child {
+    color: var(--white);
+    font-weight: 700;
+}
+
+/* =========================
+   CATEGORIE
+========================= */
+
+.category {
+    border-bottom: 1px solid var(--gray);
+}
+
+.category-title {
+    width: 100%;
+    min-height: 145px;
+
+    padding: 0 7vw;
+
+    display: grid;
+    grid-template-columns: 8vw 1fr 4vw;
+    align-items: center;
+
+    border: 0;
+    background: var(--bg-main);
+
+    color: var(--text-bright);
+
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.15s ease;
+}
+
+.category-title span {
+    align-self: start;
+    padding-top: 28px;
+
+    color: var(--red-bright);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .1em;
+}
+
+.category-title strong {
+    font-size: clamp(34px, 5.5vw, 76px);
+    font-weight: 700;
+
+    letter-spacing: -.04em;
     text-transform: uppercase;
 }
 
-/* Corpo del testo */
-article > div:last-child {
-    color: var(--text-main);
-    white-space: pre-line; /* Fondamentale per mantenere la struttura di testi e poesie */
-    text-align: left;
-    font-size: 1.05rem;
-}
+.category-title i {
+    justify-self: end;
 
-/* Dettagli grunge nel testo (corsivi/enfasi) */
-article em {
-    color: var(--blood-bright);
+    color: var(--red-bright);
+
+    font-size: 22px;
     font-style: normal;
-    text-decoration: underline;
+    font-weight: 400;
 }
 
-/* ==========================================================================
-   5. FOOTER
-   ========================================================================== */
+.category-title:hover {
+    background: var(--light);
+}
+
+/* =========================
+   TITOLI
+========================= */
+
+.works {
+    display: none;
+
+    margin: 0 7vw;
+
+    border-top: 1px solid var(--gray);
+    background: var(--bg-main);
+}
+
+.works.open {
+    display: block;
+}
+
+.work-title {
+    width: 100%;
+    min-height: 82px;
+
+    padding: 0 2vw;
+
+    display: grid;
+    grid-template-columns: 65px 1fr 30px;
+    align-items: center;
+
+    border: 0;
+    border-bottom: 1px solid var(--gray);
+
+    background: #141414;
+
+    color: var(--dark-gray);
+
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.15s ease;
+}
+
+.work-title span {
+    color: var(--red);
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .1em;
+}
+
+.work-title strong {
+    font-size: 17px;
+    line-height: 1.25;
+
+    font-weight: 400;
+    letter-spacing: .02em;
+    color: var(--text-bright);
+}
+
+.work-title i {
+    justify-self: end;
+
+    color: var(--red);
+
+    font-size: 14px;
+    font-style: normal;
+}
+
+.work-title:hover {
+    background: var(--light);
+    border-left: 3px solid var(--red-bright);
+}
+
+.work-title:hover strong {
+    color: var(--white);
+}
+
+.work-title:hover span,
+.work-title:hover i {
+    color: var(--red-bright);
+}
+
+/* =========================
+   LETTORE SOVRAPPOSTO
+========================= */
+
+.reader {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 100;
+
+    overflow-y: auto;
+
+    padding: 70px 9vw 100px;
+
+    background: #0d0d0d;
+
+    border-top: 2px solid var(--red-bright);
+}
+
+.reader.open {
+    display: block;
+}
+
+.close-reader {
+    position: fixed;
+    top: 25px;
+    right: 6vw;
+
+    border: 1px solid var(--red);
+    padding: 6px 12px;
+    background: var(--bg-main);
+
+    color: var(--red-bright);
+
+    cursor: pointer;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    transition: all 0.15s ease;
+}
+
+.close-reader:hover {
+    background: var(--red);
+    color: var(--white);
+}
+
+.work-content {
+    display: none;
+
+    width: min(800px, 100%);
+
+    margin: 0 auto;
+}
+
+.work-content.active {
+    display: block;
+}
+
+.content-label {
+    margin-bottom: 32px;
+
+    color: var(--red-bright);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: .2em;
+    text-transform: uppercase;
+}
+
+.work-content h1 {
+    margin: 0 0 65px;
+
+    color: var(--white);
+
+    font-size: clamp(32px, 5.5vw, 64px);
+    line-height: 1.05;
+
+    font-weight: 700;
+    letter-spacing: -.03em;
+    border-bottom: 1px solid var(--gray);
+    padding-bottom: 30px;
+}
+
+/* =========================
+   TESTO
+========================= */
+
+.body-text,
+.poem {
+    font-family: inherit;
+
+    font-size: 15px;
+    line-height: 1.8;
+
+    font-weight: 400;
+
+    white-space: pre-line;
+
+    color: #c5c5c5;
+}
+
+.body-text em {
+    font-style: normal;
+    color: var(--red-bright);
+    background: rgba(139, 0, 0, 0.2);
+    padding: 0 3px;
+}
+
+/* POESIA */
+
+.poem {
+    font-size: 16px;
+    line-height: 1.75;
+    border-left: 1px solid var(--red);
+    padding-left: 20px;
+    color: var(--text-bright);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
 footer {
-    max-width: 900px;
-    margin: 4rem auto 2rem;
-    padding: 1.5rem;
-    background: #000;
-    border: 1px solid #333;
+    min-height: 100px;
+
+    padding: 30px 7vw;
+
     display: flex;
     justify-content: space-between;
-    font-size: 0.85rem;
-    color: #666;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: .15em;
     text-transform: uppercase;
-    letter-spacing: 1px;
+
+    color: var(--dark-gray);
+    background: var(--bg-main);
+    border-top: 1px solid var(--gray);
 }
 
-footer span:first-child::before {
-    content: "■ ";
-    color: var(--blood-red);
+footer span:first-child {
+    color: var(--red-bright);
 }
 
-/* ==========================================================================
-   6. RESPONSIVE DESIGN
-   ========================================================================== */
-@media (max-width: 768px) {
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
     header {
-        flex-direction: column;
-        gap: 1.5rem;
-        align-items: flex-start;
+        height: 58px;
+        padding: 0 6vw;
     }
-    
+
     nav {
-        width: 100%;
-        justify-content: space-between;
-    }
-    
-    main > section:first-of-type div:first-child {
-        font-size: 2rem;
-    }
-    
-    main > section:first-of-type div:last-child {
+        gap: 12px;
         flex-direction: column;
-        gap: 0.5rem;
+        align-items: flex-end;
     }
 
-    article {
-        padding: 1.5rem;
+    .intro {
+        min-height: calc(100vh - 58px);
+
+        padding: 15vw 7vw 10vw;
     }
 
-    article h1 {
-        font-size: 1.5rem;
+    .intro::before {
+        left: 7vw;
+    }
+
+    .wordmark {
+        margin-left: 6vw;
+        margin-top: 15vw;
+
+        font-size: clamp(52px, 16vw, 95px);
+    }
+
+    .bio {
+        margin-left: 6vw;
+        padding-left: 4vw;
+
+        font-size: 8px;
+    }
+
+    .category-title {
+        min-height: 110px;
+
+        padding: 0 7vw;
+
+        grid-template-columns: 40px 1fr 25px;
+    }
+
+    .category-title strong {
+        font-size: clamp(28px, 8vw, 48px);
+    }
+
+    .works {
+        margin: 0 7vw;
+    }
+
+    .work-title {
+        min-height: 75px;
+
+        padding: 12px 3vw;
+
+        grid-template-columns: 45px 1fr 20px;
+    }
+
+    .work-title strong {
+        font-size: 15px;
+    }
+
+    .reader {
+        padding: 70px 7vw 80px;
+    }
+
+    .close-reader {
+        top: 18px;
+        right: 6vw;
+    }
+
+    .work-content h1 {
+        margin-bottom: 45px;
+
+        font-size: clamp(30px, 9vw, 52px);
+    }
+
+    .body-text {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .poem {
+        font-size: 15px;
+        line-height: 1.7;
     }
 }
