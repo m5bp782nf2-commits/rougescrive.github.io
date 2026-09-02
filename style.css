@@ -1,18 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
 /* ==========================================================================
-   BRION MONUMENTAL BRUTALISM / SHARP SCI-FI THEME
+   BRION MONUMENTAL BRUTALISM / SHARP SCI-FI THEME (V2 - CONCRETE & SHARP)
    ========================================================================== */
 
 :root {
     --white: #ffffff;
-    --light: #1e1e1e;       /* Cemento scuro */
-    --gray: #333333;        /* Giunzioni/Incisioni */
-    --dark-gray: #b0b0b0;   /* Testo secondario */
-    --text-bright: #e0e0e0; /* Testo principale */
-    --red: #8b0000;         /* Rosso sangue ossidato */
-    --red-bright: #ff1111;  /* Rosso sangue vivo */
-    --bg-main: #0a0a0a;     /* Antracite profondo */
+    --concrete-light: #2a2a2a; /* Cemento chiaro */
+    --concrete-mid: #1c1c1c;   /* Cemento intermedio */
+    --concrete-dark: #121212;  /* Cemento scuro per sfondi */
+    --border-gray: #3a3a3a;    /* Incisioni netti */
+    --text-muted: #888888;     /* Testo secondario grigio */
+    --text-bright: #d4d4d4;    /* Testo principale grigio chiaro */
+    --red-blood: #8b0000;      /* Rosso sangue scuro */
+    --red-sharp: #ff1111;      /* Rosso sangue vivo */
 }
 
 * {
@@ -21,12 +22,12 @@
 
 html {
     scroll-behavior: smooth;
-    background-color: var(--bg-main);
+    background-color: var(--concrete-dark);
 }
 
 body {
     margin: 0;
-    background: var(--bg-main);
+    background: var(--concrete-dark);
     color: var(--text-bright);
     font-family: 'Space Mono', monospace, sans-serif;
     font-weight: 400;
@@ -39,7 +40,7 @@ a {
 }
 
 /* =========================
-   HEADER
+   HEADER (CORRETTO ALLINEAMENTO)
 ========================= */
 
 header {
@@ -50,14 +51,13 @@ header {
     align-items: center;
     justify-content: space-between;
 
-    border-bottom: 1px solid var(--gray);
+    border-bottom: 1px solid var(--border-gray);
 
     position: sticky;
     top: 0;
     z-index: 50;
 
-    background: rgba(10, 10, 10, 0.95);
-    backdrop-filter: blur(4px);
+    background: rgba(18, 18, 18, 0.98);
 }
 
 .site-name {
@@ -68,19 +68,23 @@ header {
     font-weight: 700;
     letter-spacing: .15em;
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
 }
 
 .site-name span {
-    color: var(--red-bright);
+    color: var(--red-sharp);
 }
 
 nav {
     display: flex;
+    align-items: center;
     gap: 28px;
+    height: 100%;
 }
 
 nav a {
-    color: var(--dark-gray);
+    color: var(--text-muted);
     text-decoration: none;
 
     font-size: 10px;
@@ -88,10 +92,12 @@ nav a {
     letter-spacing: .15em;
     text-transform: uppercase;
     transition: color 0.15s ease;
+    display: inline-flex;
+    align-items: center;
 }
 
 nav a:hover {
-    color: var(--red-bright);
+    color: var(--red-sharp);
 }
 
 /* =========================
@@ -107,10 +113,10 @@ nav a:hover {
     flex-direction: column;
     justify-content: space-between;
 
-    border-bottom: 1px solid var(--gray);
+    border-bottom: 1px solid var(--border-gray);
 
     position: relative;
-    background: var(--bg-main);
+    background: var(--concrete-dark);
 }
 
 .intro::before {
@@ -123,7 +129,7 @@ nav a:hover {
     width: 1px;
     height: 100%;
 
-    background: var(--gray);
+    background: var(--border-gray);
 }
 
 .wordmark {
@@ -141,16 +147,16 @@ nav a:hover {
 }
 
 .wordmark span {
-    color: var(--red-bright);
+    color: var(--red-sharp);
 }
 
-/* BIO MOLTO PIÙ PICCOLA */
+/* BIO */
 
 .bio {
     margin-left: 5vw;
     padding-left: 2vw;
 
-    border-left: 1px solid var(--red);
+    border-left: 2px solid var(--red-blood);
 
     display: flex;
     flex-direction: column;
@@ -162,20 +168,20 @@ nav a:hover {
     letter-spacing: .2em;
     text-transform: uppercase;
 
-    color: var(--dark-gray);
+    color: var(--text-muted);
 }
 
 .bio div:first-child {
-    color: var(--white);
+    color: var(--text-bright);
     font-weight: 700;
 }
 
 /* =========================
-   CATEGORIE
+   CATEGORIE (GRIGIO CEMENTO)
 ========================= */
 
 .category {
-    border-bottom: 1px solid var(--gray);
+    border-bottom: 1px solid var(--border-gray);
 }
 
 .category-title {
@@ -189,7 +195,7 @@ nav a:hover {
     align-items: center;
 
     border: 0;
-    background: var(--bg-main);
+    background: var(--concrete-mid);
 
     color: var(--text-bright);
 
@@ -202,7 +208,7 @@ nav a:hover {
     align-self: start;
     padding-top: 28px;
 
-    color: var(--red-bright);
+    color: var(--red-sharp);
 
     font-size: 10px;
     font-weight: 700;
@@ -220,7 +226,7 @@ nav a:hover {
 .category-title i {
     justify-self: end;
 
-    color: var(--red-bright);
+    color: var(--red-sharp);
 
     font-size: 22px;
     font-style: normal;
@@ -228,7 +234,7 @@ nav a:hover {
 }
 
 .category-title:hover {
-    background: var(--light);
+    background: var(--concrete-light);
 }
 
 /* =========================
@@ -240,8 +246,8 @@ nav a:hover {
 
     margin: 0 7vw;
 
-    border-top: 1px solid var(--gray);
-    background: var(--bg-main);
+    border-top: 1px solid var(--border-gray);
+    background: var(--concrete-dark);
 }
 
 .works.open {
@@ -259,11 +265,11 @@ nav a:hover {
     align-items: center;
 
     border: 0;
-    border-bottom: 1px solid var(--gray);
+    border-bottom: 1px solid var(--border-gray);
 
-    background: #141414;
+    background: #181818;
 
-    color: var(--dark-gray);
+    color: var(--text-muted);
 
     cursor: pointer;
     text-align: left;
@@ -271,7 +277,7 @@ nav a:hover {
 }
 
 .work-title span {
-    color: var(--red);
+    color: var(--red-blood);
 
     font-size: 9px;
     font-weight: 700;
@@ -290,15 +296,15 @@ nav a:hover {
 .work-title i {
     justify-self: end;
 
-    color: var(--red);
+    color: var(--red-blood);
 
     font-size: 14px;
     font-style: normal;
 }
 
 .work-title:hover {
-    background: var(--light);
-    border-left: 3px solid var(--red-bright);
+    background: var(--concrete-light);
+    border-left: 3px solid var(--red-sharp);
 }
 
 .work-title:hover strong {
@@ -307,7 +313,7 @@ nav a:hover {
 
 .work-title:hover span,
 .work-title:hover i {
-    color: var(--red-bright);
+    color: var(--red-sharp);
 }
 
 /* =========================
@@ -326,9 +332,9 @@ nav a:hover {
 
     padding: 70px 9vw 100px;
 
-    background: #0d0d0d;
+    background: #151515;
 
-    border-top: 2px solid var(--red-bright);
+    border-top: 2px solid var(--red-sharp);
 }
 
 .reader.open {
@@ -337,14 +343,14 @@ nav a:hover {
 
 .close-reader {
     position: fixed;
-    top: 25px;
+    top: 20px;
     right: 6vw;
 
-    border: 1px solid var(--red);
-    padding: 6px 12px;
-    background: var(--bg-main);
+    border: 1px solid var(--red-blood);
+    padding: 6px 14px;
+    background: var(--concrete-dark);
 
-    color: var(--red-bright);
+    color: var(--red-sharp);
 
     cursor: pointer;
 
@@ -356,7 +362,7 @@ nav a:hover {
 }
 
 .close-reader:hover {
-    background: var(--red);
+    background: var(--red-blood);
     color: var(--white);
 }
 
@@ -375,7 +381,7 @@ nav a:hover {
 .content-label {
     margin-bottom: 32px;
 
-    color: var(--red-bright);
+    color: var(--red-sharp);
 
     font-size: 10px;
     font-weight: 700;
@@ -394,12 +400,12 @@ nav a:hover {
 
     font-weight: 700;
     letter-spacing: -.03em;
-    border-bottom: 1px solid var(--gray);
+    border-bottom: 1px solid var(--border-gray);
     padding-bottom: 30px;
 }
 
 /* =========================
-   TESTO
+   TESTO (RIPRISTINATO PULITO)
 ========================= */
 
 .body-text,
@@ -413,14 +419,12 @@ nav a:hover {
 
     white-space: pre-line;
 
-    color: #c5c5c5;
+    color: var(--text-bright);
 }
 
 .body-text em {
-    font-style: normal;
-    color: var(--red-bright);
-    background: rgba(139, 0, 0, 0.2);
-    padding: 0 3px;
+    font-style: italic;
+    color: var(--white);
 }
 
 /* POESIA */
@@ -428,7 +432,7 @@ nav a:hover {
 .poem {
     font-size: 16px;
     line-height: 1.75;
-    border-left: 1px solid var(--red);
+    border-left: 1px solid var(--red-blood);
     padding-left: 20px;
     color: var(--text-bright);
 }
@@ -451,13 +455,13 @@ footer {
     letter-spacing: .15em;
     text-transform: uppercase;
 
-    color: var(--dark-gray);
-    background: var(--bg-main);
-    border-top: 1px solid var(--gray);
+    color: var(--text-muted);
+    background: var(--concrete-dark);
+    border-top: 1px solid var(--border-gray);
 }
 
 footer span:first-child {
-    color: var(--red-bright);
+    color: var(--red-sharp);
 }
 
 /* =========================
@@ -472,9 +476,9 @@ footer span:first-child {
     }
 
     nav {
-        gap: 12px;
-        flex-direction: column;
-        align-items: flex-end;
+        gap: 16px;
+        flex-direction: row;
+        align-items: center;
     }
 
     .intro {
@@ -534,7 +538,7 @@ footer span:first-child {
     }
 
     .close-reader {
-        top: 18px;
+        top: 16px;
         right: 6vw;
     }
 
