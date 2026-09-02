@@ -11,7 +11,7 @@
     --border-line: #2b2b2b;
     --text-silver: #a0a0a0;
     --text-white: #f0f0f0;
-    --red-core: #ff0033;      /* Rosso vivido come l'interfaccia */
+    --red-core: #ff0033;
     --red-dim: #8b001a;
 }
 
@@ -39,7 +39,7 @@ a {
 }
 
 /* =========================
-   HEADER
+   HEADER (FIX FONT E SFASAMENTO)
 ========================= */
 
 header {
@@ -64,14 +64,22 @@ header {
     color: var(--text-white);
     text-decoration: none;
 
+    font-family: 'Space Mono', monospace, sans-serif;
     font-size: 11px;
     font-weight: 700;
+    line-height: 1;
     letter-spacing: .2em;
     text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
 }
 
 .site-name span {
     color: var(--red-core);
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: normal;
 }
 
 nav {
@@ -97,7 +105,7 @@ nav a:hover {
 }
 
 /* =========================
-   INTRO (MEGASTRUCTURE MONUMENT)
+   INTRO
 ========================= */
 
 .intro {
@@ -114,7 +122,6 @@ nav a:hover {
     position: relative;
     background: var(--black-void);
     
-    /* Pattern di righe verticali finissime che riprende la megastruttura del video */
     background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
     background-size: 32px 100%;
 }
@@ -132,6 +139,8 @@ nav a:hover {
     background: var(--border-line);
 }
 
+/* WORDMARK "ROUGESCRIVE" TUTTO ATTACCATO */
+
 .wordmark {
     margin-left: 5vw;
     margin-top: 5vw;
@@ -144,10 +153,14 @@ nav a:hover {
     text-transform: lowercase;
 
     color: var(--text-white);
+    display: flex;
+    flex-wrap: nowrap;
 }
 
 .wordmark span {
     color: var(--red-core);
+    margin: 0;
+    padding: 0;
 }
 
 /* BIO */
@@ -177,7 +190,7 @@ nav a:hover {
 }
 
 /* =========================
-   CATEGORIE (MONOLITI SCURI)
+   CATEGORIE
 ========================= */
 
 .category {
@@ -406,26 +419,35 @@ nav a:hover {
 }
 
 /* =========================
-   TESTO
+   TESTO E POESIE (CORRETTE SPAZIATURE E NO EVIDENZIATORI)
 ========================= */
 
 .body-text,
 .poem {
     font-family: inherit;
-
     font-size: 15px;
     line-height: 1.85;
-
     font-weight: 400;
 
-    white-space: pre-line;
+    /* Mantiene esattamente gli a capo e gli spazi originali del testo e delle poesie */
+    white-space: pre-wrap;
+    word-wrap: break-word;
 
     color: var(--text-silver);
 }
 
-.body-text em {
+.body-text p,
+.poem p {
+    margin: 0 0 1.5em 0;
+}
+
+/* Nessun effetto o colore speciale per il tag em */
+.body-text em,
+.poem em {
     font-style: italic;
-    color: var(--text-white);
+    color: inherit;
+    background: none;
+    padding: 0;
 }
 
 /* POESIA */
@@ -433,8 +455,6 @@ nav a:hover {
 .poem {
     font-size: 16px;
     line-height: 1.8;
-    border-left: 1px solid var(--border-line);
-    padding-left: 24px;
     color: var(--text-white);
 }
 
